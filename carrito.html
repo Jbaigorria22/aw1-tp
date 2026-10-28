@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tu carrito de compras en Nutrite.">
+  <title>Carrito | Nutrite — Dietética Online</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <div class="barra-promo">
+    Envío gratis en Córdoba Capital desde <span class="barra-promo__destacado">$40.000</span> · Hasta <span class="barra-promo__destacado">12 cuotas</span>
+  </div>
+
+  <header class="header">
+    <div class="header__contenido l-contenedor">
+      <input type="checkbox" id="menu-toggle" class="header__toggle-input">
+      <label for="menu-toggle" class="header__toggle" aria-label="Abrir menú">
+        <span class="header__toggle-linea"></span>
+        <span class="header__toggle-linea"></span>
+        <span class="header__toggle-linea"></span>
+      </label>
+
+      <a href="index.html" class="logo" aria-label="Nutrite - Inicio">
+        <img class="logo__imagen" src="assets/img/logo.svg" alt="">
+        <span class="logo__texto">nutrite</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li class="nav__item"><a class="nav__link" href="index.html">Inicio</a></li>
+          <li class="nav__item"><a class="nav__link" href="catalogo.html">Tienda</a></li>
+          <li class="nav__item"><a class="nav__link nav__link--activo" href="carrito.html">Envíos</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <form class="buscador" action="catalogo.html" role="search">
+        <label for="buscar" class="u-visualmente-oculto">Buscar productos</label>
+        <input class="buscador__input" type="search" id="buscar" name="q" placeholder="Buscar sin TACC, chía, proteína...">
+        <button class="buscador__boton" type="submit" aria-label="Buscar">
+          <img class="buscador__icono" src="assets/img/iconos/buscar-blanco.svg" alt="">
+        </button>
+      </form>
+
+      <a href="carrito.html" class="carrito-icono" aria-label="Ver carrito (3 productos)">
+        <img class="carrito-icono__imagen" src="assets/img/iconos/carrito.svg" alt="">
+        <span class="carrito-icono__contador">3</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="l-contenedor">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol class="breadcrumb__lista"><li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Inicio</a></li><li class="breadcrumb__item">Carrito</li></ol>
+      </nav>
+      <h1>Tu carrito <span class="carrito__cantidad">(3 productos)</span></h1>
+
+      <div class="carrito u-mt-4">
+        <ul class="carrito__lista">
+          <li class="item-carrito">
+            <img class="item-carrito__imagen" src="assets/img/productos/harina-almendras.svg" alt="Harina de almendras 500 g">
+            <div class="item-carrito__info">
+              <h3 class="item-carrito__nombre">Harina de almendras 500 g</h3>
+              <span class="item-carrito__unitario">$6.800 c/u</span>
+              <span class="stock stock--ultimas">¡Últimas 3 unidades!</span>
+            </div>
+            <div class="item-carrito__acciones">
+              <div class="cantidad"><button class="cantidad__boton" aria-label="Restar">−</button><input class="cantidad__input" type="number" value="2" aria-label="Cantidad"><button class="cantidad__boton" aria-label="Sumar">+</button></div>
+              <span class="item-carrito__subtotal">$13.600</span>
+              <button class="item-carrito__eliminar">Eliminar</button>
+            </div>
+          </li>
+          <li class="item-carrito">
+            <img class="item-carrito__imagen" src="assets/img/productos/semillas-chia.svg" alt="Semillas de chía 500 g">
+            <div class="item-carrito__info">
+              <h3 class="item-carrito__nombre">Semillas de chía 500 g</h3>
+              <span class="item-carrito__unitario">$3.100 c/u</span>
+              <span class="stock stock--disponible">En stock</span>
+            </div>
+            <div class="item-carrito__acciones">
+              <div class="cantidad"><button class="cantidad__boton" aria-label="Restar">−</button><input class="cantidad__input" type="number" value="1" aria-label="Cantidad"><button class="cantidad__boton" aria-label="Sumar">+</button></div>
+              <span class="item-carrito__subtotal">$3.100</span>
+              <button class="item-carrito__eliminar">Eliminar</button>
+            </div>
+          </li>
+          <li class="item-carrito">
+            <img class="item-carrito__imagen" src="assets/img/productos/stevia-liquida.svg" alt="Stevia líquida 100 ml">
+            <div class="item-carrito__info">
+              <h3 class="item-carrito__nombre">Stevia líquida 100 ml</h3>
+              <span class="item-carrito__unitario">$2.900 c/u</span>
+              <span class="stock stock--disponible">En stock</span>
+            </div>
+            <div class="item-carrito__acciones">
+              <div class="cantidad"><button class="cantidad__boton" aria-label="Restar">−</button><input class="cantidad__input" type="number" value="1" aria-label="Cantidad"><button class="cantidad__boton" aria-label="Sumar">+</button></div>
+              <span class="item-carrito__subtotal">$2.900</span>
+              <button class="item-carrito__eliminar">Eliminar</button>
+            </div>
+          </li>
+        </ul>
+
+        <aside class="resumen">
+          <h2 class="resumen__titulo">Resumen de compra</h2>
+
+          <div class="calculadora-envio">
+            <h3 class="calculadora-envio__titulo"><img class="calculadora-envio__icono" src="assets/img/iconos/envio.svg" alt=""> Costo de envío</h3>
+            <form class="calculadora-envio__form">
+              <label for="cp-carrito" class="u-visualmente-oculto">Código postal</label>
+              <input class="calculadora-envio__input" id="cp-carrito" type="text" inputmode="numeric" value="5000">
+              <button class="btn btn--primario btn--chico" type="submit">Calcular</button>
+            </form>
+            <div class="calculadora-envio__resultados">
+              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio" checked><span><span class="opcion-envio__nombre">Moto</span><span class="opcion-envio__tiempo">Llega mañana</span></span></span><span class="opcion-envio__precio">$1.900</span></label>
+              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio"><span><span class="opcion-envio__nombre">Correo a domicilio</span><span class="opcion-envio__tiempo">3 a 5 días hábiles</span></span></span><span class="opcion-envio__precio">$3.400</span></label>
+              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio"><span><span class="opcion-envio__nombre">Retiro en punto Nutrite</span><span class="opcion-envio__tiempo">Disponible en 24 h</span></span></span><span class="opcion-envio__precio opcion-envio__precio--gratis">Gratis</span></label>
+            </div>
+          </div>
+
+          <div class="resumen__linea"><span>Subtotal</span><span>$19.600</span></div>
+          <div class="resumen__linea"><span>Envío (Moto)</span><span>$1.900</span></div>
+          <div class="resumen__linea resumen__linea--total"><span>Total</span><span>$21.500</span></div>
+          <p class="producto__cuotas u-texto-centro">o 3 cuotas sin interés de $7.167</p>
+          <a class="btn btn--primario btn--bloque" href="checkout.html">Iniciar compra</a>
+          <a class="btn btn--secundario btn--bloque" href="catalogo.html">Seguir comprando</a>
+          <p class="resumen__nota">Te faltan $20.400 para el envío gratis.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="l-contenedor">
+      <div class="footer__grilla">
+        <div class="footer__marca">
+          <a href="index.html" class="logo logo--footer">
+            <img class="logo__imagen" src="assets/img/logo.svg" alt="">
+            <span class="logo__texto logo__texto--claro">nutrite</span>
+          </a>
+          <p class="footer__descripcion">Dietética online de Córdoba. Productos naturales, sin TACC, veganos e integrales con envío a domicilio.</p>
+          <div class="footer__redes">
+            <a class="footer__red" href="https://www.instagram.com/nutrite_dieteticaonline" aria-label="Instagram"><img class="footer__red-icono" src="assets/img/iconos/camara-blanco.svg" alt=""></a>
+            <a class="footer__red" href="#" aria-label="WhatsApp"><img class="footer__red-icono" src="assets/img/iconos/chat-blanco.svg" alt=""></a>
+            <a class="footer__red" href="#" aria-label="Email"><img class="footer__red-icono" src="assets/img/iconos/mail-blanco.svg" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Tienda</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="catalogo.html">Todos los productos</a></li>
+            <li><a class="footer__link" href="catalogo.html">Sin TACC</a></li>
+            <li><a class="footer__link" href="catalogo.html">Veganos</a></li>
+            <li><a class="footer__link" href="catalogo.html">Suplementos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Ayuda</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="carrito.html">Envíos y costos</a></li>
+            <li><a class="footer__link" href="contacto.html">Preguntas frecuentes</a></li>
+            <li><a class="footer__link" href="contacto.html">Contacto</a></li>
+            <li><a class="footer__link" href="#">Mi cuenta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Legales</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="#">Términos y condiciones</a></li>
+            <li><a class="footer__link" href="#">Política de privacidad</a></li>
+            <li><a class="footer__link" href="#">Cambios y devoluciones</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__legal">© 2026 Nutrite — Dietética Online · Córdoba, Argentina · www.nutrite.com.ar</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-flotante" href="#" aria-label="Consultar por WhatsApp">
+    <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
+    <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
+  </a>
+</body>
+</html>

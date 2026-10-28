@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactá a Nutrite por WhatsApp, Instagram o email. Preguntas frecuentes.">
+  <title>Contacto | Nutrite — Dietética Online</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <div class="barra-promo">
+    Envío gratis en Córdoba Capital desde <span class="barra-promo__destacado">$40.000</span> · Hasta <span class="barra-promo__destacado">12 cuotas</span>
+  </div>
+
+  <header class="header">
+    <div class="header__contenido l-contenedor">
+      <input type="checkbox" id="menu-toggle" class="header__toggle-input">
+      <label for="menu-toggle" class="header__toggle" aria-label="Abrir menú">
+        <span class="header__toggle-linea"></span>
+        <span class="header__toggle-linea"></span>
+        <span class="header__toggle-linea"></span>
+      </label>
+
+      <a href="index.html" class="logo" aria-label="Nutrite - Inicio">
+        <img class="logo__imagen" src="assets/img/logo.svg" alt="">
+        <span class="logo__texto">nutrite</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li class="nav__item"><a class="nav__link" href="index.html">Inicio</a></li>
+          <li class="nav__item"><a class="nav__link" href="catalogo.html">Tienda</a></li>
+          <li class="nav__item"><a class="nav__link" href="carrito.html">Envíos</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
+          <li class="nav__item"><a class="nav__link nav__link--activo" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <form class="buscador" action="catalogo.html" role="search">
+        <label for="buscar" class="u-visualmente-oculto">Buscar productos</label>
+        <input class="buscador__input" type="search" id="buscar" name="q" placeholder="Buscar sin TACC, chía, proteína...">
+        <button class="buscador__boton" type="submit" aria-label="Buscar">
+          <img class="buscador__icono" src="assets/img/iconos/buscar-blanco.svg" alt="">
+        </button>
+      </form>
+
+      <a href="carrito.html" class="carrito-icono" aria-label="Ver carrito (3 productos)">
+        <img class="carrito-icono__imagen" src="assets/img/iconos/carrito.svg" alt="">
+        <span class="carrito-icono__contador">3</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="l-contenedor">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol class="breadcrumb__lista"><li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Inicio</a></li><li class="breadcrumb__item">Contacto</li></ol>
+      </nav>
+      <h1>Contacto y ayuda</h1>
+      <p class="contacto__intro u-mt-4">¿Tenés dudas sobre un producto, tu envío o tu pedido? Escribinos y te respondemos a la brevedad.</p>
+
+      <div class="contacto u-mt-6">
+        <section class="contacto__panel">
+          <h2>Envianos un mensaje</h2>
+          <form class="form u-mt-4">
+            <div class="form__fila form__fila--2col">
+              <div class="campo"><label class="campo__label" for="nombre">Nombre</label><input class="campo__input" id="nombre" type="text" placeholder="Julieta Fernández"></div>
+              <div class="campo"><label class="campo__label" for="email">Email</label><input class="campo__input" id="email" type="email" placeholder="tu@email.com"></div>
+            </div>
+            <div class="campo"><label class="campo__label" for="motivo">Motivo</label>
+              <select class="campo__select" id="motivo"><option>Consulta sobre un producto</option><option>Estado de mi pedido</option><option>Cambios y devoluciones</option><option>Otro</option></select></div>
+            <div class="campo"><label class="campo__label" for="mensaje">Mensaje</label><textarea class="campo__textarea" id="mensaje" placeholder="Contanos en qué te podemos ayudar"></textarea>
+              <span class="campo__ayuda">Respondemos de lunes a viernes de 9 a 18 h.</span></div>
+            <button class="btn btn--primario" type="submit">Enviar mensaje</button>
+          </form>
+        </section>
+
+        <aside class="contacto__panel">
+          <h2>Otros canales</h2>
+          <div class="contacto__canales">
+            <a class="canal" href="#"><img class="canal__icono canal__icono--whatsapp" src="assets/img/iconos/chat-blanco.svg" alt=""><span><span class="canal__nombre">WhatsApp</span><br><span class="canal__dato">+54 9 351 000-0000</span></span></a>
+            <a class="canal" href="https://www.instagram.com/nutrite_dieteticaonline"><img class="canal__icono canal__icono--instagram" src="assets/img/iconos/camara-blanco.svg" alt=""><span><span class="canal__nombre">Instagram</span><br><span class="canal__dato">@nutrite_dieteticaonline</span></span></a>
+            <a class="canal" href="#"><img class="canal__icono" src="assets/img/iconos/mail-blanco.svg" alt=""><span><span class="canal__nombre">Email</span><br><span class="canal__dato">hola@nutrite.com.ar</span></span></a>
+            <div class="canal"><img class="canal__icono" src="assets/img/iconos/ubicacion-blanco.svg" alt=""><span><span class="canal__nombre">Punto de retiro</span><br><span class="canal__dato">Córdoba Capital</span></span></div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="faq">
+        <h2 class="faq__titulo">Preguntas frecuentes</h2>
+        <div class="acordeon">
+          <details class="acordeon__item"><summary class="acordeon__titulo">¿Cuánto tarda en llegar mi pedido?</summary><div class="acordeon__contenido"><p>En Córdoba Capital entregamos en moto en 24 h hábiles. Al interior, por correo, entre 3 y 5 días hábiles.</p></div></details>
+          <details class="acordeon__item"><summary class="acordeon__titulo">¿Cómo sé si un producto tiene stock?</summary><div class="acordeon__contenido"><p>Cada producto muestra su disponibilidad en tiempo real: En stock, Últimas unidades o Sin stock.</p></div></details>
+          <details class="acordeon__item"><summary class="acordeon__titulo">¿Puedo pagar en cuotas?</summary><div class="acordeon__contenido"><p>Sí, con tarjeta de crédito hasta 12 cuotas; 3 cuotas sin interés en todos los productos.</p></div></details>
+          <details class="acordeon__item"><summary class="acordeon__titulo">¿Los productos sin TACC son certificados?</summary><div class="acordeon__contenido"><p>Sí, todos los productos marcados como Sin TACC cuentan con el logo oficial en su envase.</p></div></details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="l-contenedor">
+      <div class="footer__grilla">
+        <div class="footer__marca">
+          <a href="index.html" class="logo logo--footer">
+            <img class="logo__imagen" src="assets/img/logo.svg" alt="">
+            <span class="logo__texto logo__texto--claro">nutrite</span>
+          </a>
+          <p class="footer__descripcion">Dietética online de Córdoba. Productos naturales, sin TACC, veganos e integrales con envío a domicilio.</p>
+          <div class="footer__redes">
+            <a class="footer__red" href="https://www.instagram.com/nutrite_dieteticaonline" aria-label="Instagram"><img class="footer__red-icono" src="assets/img/iconos/camara-blanco.svg" alt=""></a>
+            <a class="footer__red" href="#" aria-label="WhatsApp"><img class="footer__red-icono" src="assets/img/iconos/chat-blanco.svg" alt=""></a>
+            <a class="footer__red" href="#" aria-label="Email"><img class="footer__red-icono" src="assets/img/iconos/mail-blanco.svg" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Tienda</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="catalogo.html">Todos los productos</a></li>
+            <li><a class="footer__link" href="catalogo.html">Sin TACC</a></li>
+            <li><a class="footer__link" href="catalogo.html">Veganos</a></li>
+            <li><a class="footer__link" href="catalogo.html">Suplementos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Ayuda</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="carrito.html">Envíos y costos</a></li>
+            <li><a class="footer__link" href="contacto.html">Preguntas frecuentes</a></li>
+            <li><a class="footer__link" href="contacto.html">Contacto</a></li>
+            <li><a class="footer__link" href="#">Mi cuenta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Legales</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="#">Términos y condiciones</a></li>
+            <li><a class="footer__link" href="#">Política de privacidad</a></li>
+            <li><a class="footer__link" href="#">Cambios y devoluciones</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__legal">© 2026 Nutrite — Dietética Online · Córdoba, Argentina · www.nutrite.com.ar</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-flotante" href="#" aria-label="Consultar por WhatsApp">
+    <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
+    <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
+  </a>
+</body>
+</html>

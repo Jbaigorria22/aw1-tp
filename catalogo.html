@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de productos dietéticos con filtros sin TACC, vegano, sin azúcar e integral.">
+  <title>Tienda | Nutrite — Dietética Online</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <div class="barra-promo">
+    Envío gratis en Córdoba Capital desde <span class="barra-promo__destacado">$40.000</span> · Hasta <span class="barra-promo__destacado">12 cuotas</span>
+  </div>
+
+  <header class="header">
+    <div class="header__contenido l-contenedor">
+      <input type="checkbox" id="menu-toggle" class="header__toggle-input">
+      <label for="menu-toggle" class="header__toggle" aria-label="Abrir menú">
+        <span class="header__toggle-linea"></span>
+        <span class="header__toggle-linea"></span>
+        <span class="header__toggle-linea"></span>
+      </label>
+
+      <a href="index.html" class="logo" aria-label="Nutrite - Inicio">
+        <img class="logo__imagen" src="assets/img/logo.svg" alt="">
+        <span class="logo__texto">nutrite</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li class="nav__item"><a class="nav__link" href="index.html">Inicio</a></li>
+          <li class="nav__item"><a class="nav__link nav__link--activo" href="catalogo.html">Tienda</a></li>
+          <li class="nav__item"><a class="nav__link" href="carrito.html">Envíos</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <form class="buscador" action="catalogo.html" role="search">
+        <label for="buscar" class="u-visualmente-oculto">Buscar productos</label>
+        <input class="buscador__input" type="search" id="buscar" name="q" placeholder="Buscar sin TACC, chía, proteína...">
+        <button class="buscador__boton" type="submit" aria-label="Buscar">
+          <img class="buscador__icono" src="assets/img/iconos/buscar-blanco.svg" alt="">
+        </button>
+      </form>
+
+      <a href="carrito.html" class="carrito-icono" aria-label="Ver carrito (3 productos)">
+        <img class="carrito-icono__imagen" src="assets/img/iconos/carrito.svg" alt="">
+        <span class="carrito-icono__contador">3</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="l-contenedor">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <ol class="breadcrumb__lista"><li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Inicio</a></li><li class="breadcrumb__item">Tienda</li></ol>
+      </nav>
+      <header class="catalogo__encabezado">
+        <h1>Todos los productos</h1>
+      </header>
+
+      <div class="catalogo">
+        <details class="filtros" open>
+          <summary class="filtros__resumen">Filtrar productos</summary>
+          <form class="filtros__cuerpo">
+            <fieldset class="filtros__grupo">
+              <legend class="filtros__titulo">Atributos</legend>
+              <label class="filtros__opcion"><input type="checkbox" name="attr" checked> Sin TACC <span class="filtros__cantidad">(24)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="attr" checked> Vegano <span class="filtros__cantidad">(31)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="attr"> Sin azúcar <span class="filtros__cantidad">(18)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="attr"> Integral <span class="filtros__cantidad">(12)</span></label>
+            </fieldset>
+            <fieldset class="filtros__grupo">
+              <legend class="filtros__titulo">Categoría</legend>
+              <label class="filtros__opcion"><input type="checkbox" name="cat"> Harinas y panificados <span class="filtros__cantidad">(15)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat"> Snacks y galletitas <span class="filtros__cantidad">(22)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat"> Bebidas <span class="filtros__cantidad">(9)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat"> Frutos secos y semillas <span class="filtros__cantidad">(17)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat"> Suplementos y vitaminas <span class="filtros__cantidad">(11)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat"> Endulzantes naturales <span class="filtros__cantidad">(6)</span></label>
+            </fieldset>
+            <fieldset class="filtros__grupo">
+              <legend class="filtros__titulo">Disponibilidad</legend>
+              <label class="filtros__opcion"><input type="checkbox" name="stock"> Solo con stock <span class="filtros__cantidad">(68)</span></label>
+            </fieldset>
+            <button type="reset" class="btn btn--secundario btn--chico">Limpiar filtros</button>
+          </form>
+        </details>
+
+        <section>
+          <div class="chips" aria-label="Filtros activos">
+            <button class="chip chip--activo">Sin TACC <span class="chip__quitar">×</span></button>
+            <button class="chip chip--activo">Vegano <span class="chip__quitar">×</span></button>
+            <button class="chip">Sin azúcar</button>
+            <button class="chip">Integral</button>
+          </div>
+          <div class="catalogo__barra">
+            <span class="catalogo__resultados">Mostrando <strong>8</strong> de 42 productos</span>
+            <label class="catalogo__orden">Ordenar:
+              <select class="campo__select">
+                <option>Más vendidos</option><option>Menor precio</option><option>Mayor precio</option><option>Nombre A-Z</option>
+              </select>
+            </label>
+          </div>
+          <div class="l-grilla">
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/galletitas-avena.svg" alt="Galletitas de avena y miel sin TACC 200 g" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Snacks y galletitas</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Galletitas de avena y miel sin TACC 200 g</a></h3>
+            <div class="badges"><span class="badge badge--sin-tacc">Sin TACC</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--disponible">En stock</span>
+              <span class="producto-card__precio">$3.200</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $1.067</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/harina-almendras.svg" alt="Harina de almendras 500 g" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Harinas y panificados</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Harina de almendras 500 g</a></h3>
+            <div class="badges"><span class="badge badge--sin-tacc">Sin TACC</span><span class="badge badge--vegano">Vegano</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--ultimas">¡Últimas 3 unidades!</span>
+              <span class="producto-card__precio">$6.800</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $2.267</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/mix-frutos-secos.svg" alt="Mix de frutos secos premium 250 g" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Frutos secos y semillas</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Mix de frutos secos premium 250 g</a></h3>
+            <div class="badges"><span class="badge badge--vegano">Vegano</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--disponible">En stock</span>
+              <span class="producto-card__precio">$4.500</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $1.500</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/stevia-liquida.svg" alt="Stevia líquida 100 ml" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Endulzantes naturales</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Stevia líquida 100 ml</a></h3>
+            <div class="badges"><span class="badge badge--sin-azucar">Sin azúcar</span><span class="badge badge--vegano">Vegano</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--disponible">En stock</span>
+              <span class="producto-card__precio">$2.900</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $967</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card producto-card--sin-stock">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/proteina-arveja.svg" alt="Proteína vegana de arveja 1 kg" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Suplementos y vitaminas</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Proteína vegana de arveja 1 kg</a></h3>
+            <div class="badges"><span class="badge badge--vegano">Vegano</span><span class="badge badge--sin-azucar">Sin azúcar</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--sin-stock">Sin stock</span>
+              <span class="producto-card__precio">$18.500</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $6.167</span>
+              <button class="btn btn--deshabilitado btn--chico btn--bloque" disabled>Sin stock</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/bebida-almendras.svg" alt="Bebida de almendras sin azúcar 1 L" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Bebidas</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Bebida de almendras sin azúcar 1 L</a></h3>
+            <div class="badges"><span class="badge badge--vegano">Vegano</span><span class="badge badge--sin-azucar">Sin azúcar</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--disponible">En stock</span>
+              <span class="producto-card__precio">$2.400</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $800</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/pan-integral.svg" alt="Pan integral de semillas 400 g" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Harinas y panificados</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Pan integral de semillas 400 g</a></h3>
+            <div class="badges"><span class="badge badge--integral">Integral</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--ultimas">¡Últimas 2 unidades!</span>
+              <span class="producto-card__precio">$3.900</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $1.300</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/semillas-chia.svg" alt="Semillas de chía 500 g" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Frutos secos y semillas</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Semillas de chía 500 g</a></h3>
+            <div class="badges"><span class="badge badge--sin-tacc">Sin TACC</span><span class="badge badge--vegano">Vegano</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--disponible">En stock</span>
+              <span class="producto-card__precio">$3.100</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $1.033</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+          </div>
+          <nav class="paginacion" aria-label="Paginación">
+            <a class="paginacion__link paginacion__link--activo" href="#">1</a>
+            <a class="paginacion__link" href="#">2</a>
+            <a class="paginacion__link" href="#">3</a>
+            <a class="paginacion__link" href="#">›</a>
+          </nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="l-contenedor">
+      <div class="footer__grilla">
+        <div class="footer__marca">
+          <a href="index.html" class="logo logo--footer">
+            <img class="logo__imagen" src="assets/img/logo.svg" alt="">
+            <span class="logo__texto logo__texto--claro">nutrite</span>
+          </a>
+          <p class="footer__descripcion">Dietética online de Córdoba. Productos naturales, sin TACC, veganos e integrales con envío a domicilio.</p>
+          <div class="footer__redes">
+            <a class="footer__red" href="https://www.instagram.com/nutrite_dieteticaonline" aria-label="Instagram"><img class="footer__red-icono" src="assets/img/iconos/camara-blanco.svg" alt=""></a>
+            <a class="footer__red" href="#" aria-label="WhatsApp"><img class="footer__red-icono" src="assets/img/iconos/chat-blanco.svg" alt=""></a>
+            <a class="footer__red" href="#" aria-label="Email"><img class="footer__red-icono" src="assets/img/iconos/mail-blanco.svg" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Tienda</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="catalogo.html">Todos los productos</a></li>
+            <li><a class="footer__link" href="catalogo.html">Sin TACC</a></li>
+            <li><a class="footer__link" href="catalogo.html">Veganos</a></li>
+            <li><a class="footer__link" href="catalogo.html">Suplementos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Ayuda</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="carrito.html">Envíos y costos</a></li>
+            <li><a class="footer__link" href="contacto.html">Preguntas frecuentes</a></li>
+            <li><a class="footer__link" href="contacto.html">Contacto</a></li>
+            <li><a class="footer__link" href="#">Mi cuenta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Legales</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="#">Términos y condiciones</a></li>
+            <li><a class="footer__link" href="#">Política de privacidad</a></li>
+            <li><a class="footer__link" href="#">Cambios y devoluciones</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__legal">© 2026 Nutrite — Dietética Online · Córdoba, Argentina · www.nutrite.com.ar</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-flotante" href="#" aria-label="Consultar por WhatsApp">
+    <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
+    <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
+  </a>
+</body>
+</html>

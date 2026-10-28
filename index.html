@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dietética online en Córdoba: productos sin TACC, veganos, integrales y suplementos con envío a domicilio.">
+  <title>Inicio | Nutrite — Dietética Online</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <div class="barra-promo">
+    Envío gratis en Córdoba Capital desde <span class="barra-promo__destacado">$40.000</span> · Hasta <span class="barra-promo__destacado">12 cuotas</span>
+  </div>
+
+  <header class="header">
+    <div class="header__contenido l-contenedor">
+      <input type="checkbox" id="menu-toggle" class="header__toggle-input">
+      <label for="menu-toggle" class="header__toggle" aria-label="Abrir menú">
+        <span class="header__toggle-linea"></span>
+        <span class="header__toggle-linea"></span>
+        <span class="header__toggle-linea"></span>
+      </label>
+
+      <a href="index.html" class="logo" aria-label="Nutrite - Inicio">
+        <img class="logo__imagen" src="assets/img/logo.svg" alt="">
+        <span class="logo__texto">nutrite</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li class="nav__item"><a class="nav__link nav__link--activo" href="index.html">Inicio</a></li>
+          <li class="nav__item"><a class="nav__link" href="catalogo.html">Tienda</a></li>
+          <li class="nav__item"><a class="nav__link" href="carrito.html">Envíos</a></li>
+          <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <form class="buscador" action="catalogo.html" role="search">
+        <label for="buscar" class="u-visualmente-oculto">Buscar productos</label>
+        <input class="buscador__input" type="search" id="buscar" name="q" placeholder="Buscar sin TACC, chía, proteína...">
+        <button class="buscador__boton" type="submit" aria-label="Buscar">
+          <img class="buscador__icono" src="assets/img/iconos/buscar-blanco.svg" alt="">
+        </button>
+      </form>
+
+      <a href="carrito.html" class="carrito-icono" aria-label="Ver carrito (3 productos)">
+        <img class="carrito-icono__imagen" src="assets/img/iconos/carrito.svg" alt="">
+        <span class="carrito-icono__contador">3</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__contenido l-contenedor">
+        <div>
+          <span class="hero__etiqueta">Dietética 100% online</span>
+          <h1 class="hero__titulo">Comé sano sin moverte de casa, <span class="hero__titulo-resaltado">desde tu celular</span></h1>
+          <p class="hero__texto">Productos sin TACC, veganos, integrales y suplementos con stock en tiempo real y envío a tu domicilio.</p>
+          <div class="hero__acciones">
+            <a class="btn btn--primario" href="catalogo.html">Ver productos</a>
+            <a class="btn btn--secundario" href="catalogo.html">Sin TACC</a>
+          </div>
+        </div>
+        <img class="hero__imagen" src="assets/img/hero-canasta.svg" alt="Canasta con productos saludables">
+      </div>
+    </section>
+
+    <section class="l-seccion">
+      <div class="l-contenedor">
+        <h2 class="u-visualmente-oculto">Por qué comprar en Nutrite</h2>
+        <ul class="beneficios">
+          <li class="beneficios__item"><img class="beneficios__icono" src="assets/img/iconos/envio.svg" alt=""><h3 class="beneficios__titulo">Envíos a domicilio</h3><p class="beneficios__texto">Calculá el costo con tu código postal antes de pagar.</p></li>
+          <li class="beneficios__item"><img class="beneficios__icono" src="assets/img/iconos/tarjeta.svg" alt=""><h3 class="beneficios__titulo">Hasta 12 cuotas</h3><p class="beneficios__texto">Pagá con tarjeta, transferencia o billetera virtual.</p></li>
+          <li class="beneficios__item"><img class="beneficios__icono" src="assets/img/iconos/hoja.svg" alt=""><h3 class="beneficios__titulo">100% natural</h3><p class="beneficios__texto">Productos sin TACC, veganos e integrales seleccionados.</p></li>
+          <li class="beneficios__item"><img class="beneficios__icono" src="assets/img/iconos/escudo.svg" alt=""><h3 class="beneficios__titulo">Stock real</h3><p class="beneficios__texto">Ves la disponibilidad de cada producto al instante.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="l-seccion l-seccion--sin-arriba">
+      <div class="l-contenedor">
+        <div class="l-seccion__titulo"><h2>Categorías</h2><a class="l-seccion__link" href="catalogo.html">Ver todas →</a></div>
+        <div class="categorias">
+          <a class="categoria-card" href="catalogo.html"><img class="categoria-card__icono" src="assets/img/iconos/cat-harinas.svg" alt=""><span class="categoria-card__nombre">Harinas y panificados</span></a>
+          <a class="categoria-card" href="catalogo.html"><img class="categoria-card__icono" src="assets/img/iconos/cat-snacks.svg" alt=""><span class="categoria-card__nombre">Snacks y galletitas</span></a>
+          <a class="categoria-card" href="catalogo.html"><img class="categoria-card__icono" src="assets/img/iconos/cat-bebidas.svg" alt=""><span class="categoria-card__nombre">Bebidas</span></a>
+          <a class="categoria-card" href="catalogo.html"><img class="categoria-card__icono" src="assets/img/iconos/cat-frutos.svg" alt=""><span class="categoria-card__nombre">Frutos secos y semillas</span></a>
+          <a class="categoria-card" href="catalogo.html"><img class="categoria-card__icono" src="assets/img/iconos/cat-suplementos.svg" alt=""><span class="categoria-card__nombre">Suplementos</span></a>
+          <a class="categoria-card" href="catalogo.html"><img class="categoria-card__icono" src="assets/img/iconos/cat-endulzantes.svg" alt=""><span class="categoria-card__nombre">Endulzantes</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="l-seccion l-seccion--sin-arriba">
+      <div class="l-contenedor">
+        <div class="l-seccion__titulo"><h2>Productos destacados</h2><a class="l-seccion__link" href="catalogo.html">Ver catálogo →</a></div>
+        <div class="l-grilla">
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/galletitas-avena.svg" alt="Galletitas de avena y miel sin TACC 200 g" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Snacks y galletitas</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Galletitas de avena y miel sin TACC 200 g</a></h3>
+            <div class="badges"><span class="badge badge--sin-tacc">Sin TACC</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--disponible">En stock</span>
+              <span class="producto-card__precio">$3.200</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $1.067</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/harina-almendras.svg" alt="Harina de almendras 500 g" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Harinas y panificados</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Harina de almendras 500 g</a></h3>
+            <div class="badges"><span class="badge badge--sin-tacc">Sin TACC</span><span class="badge badge--vegano">Vegano</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--ultimas">¡Últimas 3 unidades!</span>
+              <span class="producto-card__precio">$6.800</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $2.267</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/mix-frutos-secos.svg" alt="Mix de frutos secos premium 250 g" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Frutos secos y semillas</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Mix de frutos secos premium 250 g</a></h3>
+            <div class="badges"><span class="badge badge--vegano">Vegano</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--disponible">En stock</span>
+              <span class="producto-card__precio">$4.500</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $1.500</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <article class="producto-card">
+          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/stevia-liquida.svg" alt="Stevia líquida 100 ml" loading="lazy"></a>
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Endulzantes naturales</span>
+            <h3 class="producto-card__nombre"><a href="producto.html">Stevia líquida 100 ml</a></h3>
+            <div class="badges"><span class="badge badge--sin-azucar">Sin azúcar</span><span class="badge badge--vegano">Vegano</span></div>
+            <div class="producto-card__pie">
+              <span class="stock stock--disponible">En stock</span>
+              <span class="producto-card__precio">$2.900</span>
+              <span class="producto-card__cuotas">3 cuotas sin interés de $967</span>
+              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="l-seccion l-seccion--sin-arriba">
+      <div class="l-contenedor">
+        <div class="banner-instagram">
+          <div>
+            <h2 class="banner-instagram__titulo">Recetas y tips en nuestro Instagram</h2>
+            <p class="banner-instagram__texto">Seguinos en @nutrite_dieteticaonline para ideas de alimentación saludable, novedades y promociones.</p>
+          </div>
+          <a class="btn btn--acento" href="https://www.instagram.com/nutrite_dieteticaonline">Seguir en Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="l-contenedor">
+      <div class="footer__grilla">
+        <div class="footer__marca">
+          <a href="index.html" class="logo logo--footer">
+            <img class="logo__imagen" src="assets/img/logo.svg" alt="">
+            <span class="logo__texto logo__texto--claro">nutrite</span>
+          </a>
+          <p class="footer__descripcion">Dietética online de Córdoba. Productos naturales, sin TACC, veganos e integrales con envío a domicilio.</p>
+          <div class="footer__redes">
+            <a class="footer__red" href="https://www.instagram.com/nutrite_dieteticaonline" aria-label="Instagram"><img class="footer__red-icono" src="assets/img/iconos/camara-blanco.svg" alt=""></a>
+            <a class="footer__red" href="#" aria-label="WhatsApp"><img class="footer__red-icono" src="assets/img/iconos/chat-blanco.svg" alt=""></a>
+            <a class="footer__red" href="#" aria-label="Email"><img class="footer__red-icono" src="assets/img/iconos/mail-blanco.svg" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Tienda</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="catalogo.html">Todos los productos</a></li>
+            <li><a class="footer__link" href="catalogo.html">Sin TACC</a></li>
+            <li><a class="footer__link" href="catalogo.html">Veganos</a></li>
+            <li><a class="footer__link" href="catalogo.html">Suplementos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Ayuda</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="carrito.html">Envíos y costos</a></li>
+            <li><a class="footer__link" href="contacto.html">Preguntas frecuentes</a></li>
+            <li><a class="footer__link" href="contacto.html">Contacto</a></li>
+            <li><a class="footer__link" href="#">Mi cuenta</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__titulo">Legales</h3>
+          <ul class="footer__lista">
+            <li><a class="footer__link" href="#">Términos y condiciones</a></li>
+            <li><a class="footer__link" href="#">Política de privacidad</a></li>
+            <li><a class="footer__link" href="#">Cambios y devoluciones</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__legal">© 2026 Nutrite — Dietética Online · Córdoba, Argentina · www.nutrite.com.ar</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-flotante" href="#" aria-label="Consultar por WhatsApp">
+    <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
+    <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
+  </a>
+</body>
+</html>
