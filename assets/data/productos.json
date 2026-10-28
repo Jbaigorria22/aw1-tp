@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nombre": "Galletitas de avena y miel sin TACC 200 g",
+    "categoria": "Snacks y galletitas",
+    "imagen": "assets/img/productos/galletitas-avena.svg",
+    "badges": ["Sin TACC"],
+    "stock": { "estado": "disponible", "texto": "En stock" },
+    "precio": 3200,
+    "cuotas": 1067
+  },
+  {
+    "id": 2,
+    "nombre": "Harina de almendras 500 g",
+    "categoria": "Harinas y panificados",
+    "imagen": "assets/img/productos/harina-almendras.svg",
+    "badges": ["Sin TACC", "Vegano"],
+    "stock": { "estado": "ultimas", "texto": "¡Últimas 3 unidades!" },
+    "precio": 6800,
+    "cuotas": 2267
+  },
+  {
+    "id": 3,
+    "nombre": "Mix de frutos secos premium 250 g",
+    "categoria": "Frutos secos y semillas",
+    "imagen": "assets/img/productos/mix-frutos-secos.svg",
+    "badges": ["Vegano"],
+    "stock": { "estado": "disponible", "texto": "En stock" },
+    "precio": 4500,
+    "cuotas": 1500
+  },
+  {
+    "id": 4,
+    "nombre": "Stevia líquida 100 ml",
+    "categoria": "Endulzantes naturales",
+    "imagen": "assets/img/productos/stevia-liquida.svg",
+    "badges": ["Sin azúcar", "Vegano"],
+    "stock": { "estado": "disponible", "texto": "En stock" },
+    "precio": 2900,
+    "cuotas": 967
+  },
+  {
+    "id": 5,
+    "nombre": "Proteína vegana de arveja 1 kg",
+    "categoria": "Suplementos y vitaminas",
+    "imagen": "assets/img/productos/proteina-arveja.svg",
+    "badges": ["Vegano", "Sin azúcar"],
+    "stock": { "estado": "sin-stock", "texto": "Sin stock" },
+    "precio": 18500,
+    "cuotas": 6167
+  },
+  {
+    "id": 6,
+    "nombre": "Bebida de almendras sin azúcar 1 L",
+    "categoria": "Bebidas",
+    "imagen": "assets/img/productos/bebida-almendras.svg",
+    "badges": ["Vegano", "Sin azúcar"],
+    "stock": { "estado": "disponible", "texto": "En stock" },
+    "precio": 2400,
+    "cuotas": 800
+  },
+  {
+    "id": 7,
+    "nombre": "Pan integral de semillas 400 g",
+    "categoria": "Harinas y panificados",
+    "imagen": "assets/img/productos/pan-integral.svg",
+    "badges": ["Integral"],
+    "stock": { "estado": "ultimas", "texto": "¡Últimas 2 unidades!" },
+    "precio": 3900,
+    "cuotas": 1300
+  },
+  {
+    "id": 8,
+    "nombre": "Semillas de chía 500 g",
+    "categoria": "Frutos secos y semillas",
+    "imagen": "assets/img/productos/semillas-chia.svg",
+    "badges": ["Sin TACC", "Vegano"],
+    "stock": { "estado": "disponible", "texto": "En stock" },
+    "precio": 3100,
+    "cuotas": 1033
+  }
+]
