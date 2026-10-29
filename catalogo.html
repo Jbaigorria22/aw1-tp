@@ -40,7 +40,7 @@
         </ul>
       </nav>
 
-      <form class="buscador" action="catalogo.html" role="search">
+      <form class="buscador" action="catalogo.html" role="search" id="form-buscador">
         <label for="buscar" class="u-visualmente-oculto">Buscar productos</label>
         <input class="buscador__input" type="search" id="buscar" name="q" placeholder="Buscar sin TACC, chía, proteína...">
         <button class="buscador__boton" type="submit" aria-label="Buscar">
@@ -67,47 +67,41 @@
       <div class="catalogo">
         <details class="filtros" open>
           <summary class="filtros__resumen">Filtrar productos</summary>
-          <form class="filtros__cuerpo">
+          <form class="filtros__cuerpo" id="form-filtros">
             <fieldset class="filtros__grupo">
               <legend class="filtros__titulo">Atributos</legend>
-              <label class="filtros__opcion"><input type="checkbox" name="attr" checked> Sin TACC <span class="filtros__cantidad">(24)</span></label>
-              <label class="filtros__opcion"><input type="checkbox" name="attr" checked> Vegano <span class="filtros__cantidad">(31)</span></label>
-              <label class="filtros__opcion"><input type="checkbox" name="attr"> Sin azúcar <span class="filtros__cantidad">(18)</span></label>
-              <label class="filtros__opcion"><input type="checkbox" name="attr"> Integral <span class="filtros__cantidad">(12)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="attr" value="Sin TACC"> Sin TACC</label>
+              <label class="filtros__opcion"><input type="checkbox" name="attr" value="Vegano"> Vegano</label>
+              <label class="filtros__opcion"><input type="checkbox" name="attr" value="Sin azúcar"> Sin azúcar</label>
+              <label class="filtros__opcion"><input type="checkbox" name="attr" value="Integral"> Integral</label>
             </fieldset>
             <fieldset class="filtros__grupo">
               <legend class="filtros__titulo">Categoría</legend>
-              <label class="filtros__opcion"><input type="checkbox" name="cat"> Harinas y panificados <span class="filtros__cantidad">(15)</span></label>
-              <label class="filtros__opcion"><input type="checkbox" name="cat"> Snacks y galletitas <span class="filtros__cantidad">(22)</span></label>
-              <label class="filtros__opcion"><input type="checkbox" name="cat"> Bebidas <span class="filtros__cantidad">(9)</span></label>
-              <label class="filtros__opcion"><input type="checkbox" name="cat"> Frutos secos y semillas <span class="filtros__cantidad">(17)</span></label>
-              <label class="filtros__opcion"><input type="checkbox" name="cat"> Suplementos y vitaminas <span class="filtros__cantidad">(11)</span></label>
-              <label class="filtros__opcion"><input type="checkbox" name="cat"> Endulzantes naturales <span class="filtros__cantidad">(6)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat" value="Harinas y panificados"> Harinas y panificados</label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat" value="Snacks y galletitas"> Snacks y galletitas</label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat" value="Bebidas"> Bebidas</label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat" value="Frutos secos y semillas"> Frutos secos y semillas</label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat" value="Suplementos y vitaminas"> Suplementos y vitaminas</label>
+              <label class="filtros__opcion"><input type="checkbox" name="cat" value="Endulzantes naturales"> Endulzantes naturales</label>
             </fieldset>
             <fieldset class="filtros__grupo">
               <legend class="filtros__titulo">Disponibilidad</legend>
-              <label class="filtros__opcion"><input type="checkbox" name="stock"> Solo con stock <span class="filtros__cantidad">(68)</span></label>
+              <label class="filtros__opcion"><input type="checkbox" name="stock"> Solo con stock</label>
             </fieldset>
-            <button type="reset" class="btn btn--secundario btn--chico">Limpiar filtros</button>
+            <button type="reset" class="btn btn--secundario btn--chico" id="btn-limpiar-filtros">Limpiar filtros</button>
           </form>
         </details>
 
         <section>
-          <div class="chips" aria-label="Filtros activos">
-            <button class="chip chip--activo">Sin TACC <span class="chip__quitar">×</span></button>
-            <button class="chip chip--activo">Vegano <span class="chip__quitar">×</span></button>
-            <button class="chip">Sin azúcar</button>
-            <button class="chip">Integral</button>
-          </div>
           <div class="catalogo__barra">
-            <span class="catalogo__resultados">Mostrando <strong>8</strong> de 42 productos</span>
+            <span class="catalogo__resultados">Mostrando <strong id="contador-resultados">0</strong> de <strong id="contador-total">0</strong> productos</span>
             <label class="catalogo__orden">Ordenar:
-              <select class="campo__select">
+              <select class="campo__select" id="orden-select">
                 <option>Más vendidos</option><option>Menor precio</option><option>Mayor precio</option><option>Nombre A-Z</option>
               </select>
             </label>
           </div>
-          <div class="l-grilla">
+          <div class="l-grilla" id="grilla-productos">
             <p class="catalogo__cargando">Cargando productos...</p>
           </div>
           <nav class="paginacion" aria-label="Paginación">
@@ -171,6 +165,6 @@
     <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
     <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
   </a>
-  <script src="assets/js/catalogo.js" defer></script>
+  <script src="assets/js/catalogo.js" type="module"></script>
 </body>
 </html>
