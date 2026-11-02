@@ -66,16 +66,17 @@
       <div class="contacto u-mt-6">
         <section class="contacto__panel">
           <h2>Envianos un mensaje</h2>
-          <form class="form u-mt-4">
+          <form class="form u-mt-4" id="form-contacto" novalidate>
             <div class="form__fila form__fila--2col">
-              <div class="campo"><label class="campo__label" for="nombre">Nombre</label><input class="campo__input" id="nombre" type="text" placeholder="Julieta Fernández"></div>
-              <div class="campo"><label class="campo__label" for="email">Email</label><input class="campo__input" id="email" type="email" placeholder="tu@email.com"></div>
+              <div class="campo"><label class="campo__label" for="nombre">Nombre</label><input class="campo__input" id="nombre" name="nombre" type="text" placeholder="Julieta Fernández"><span class="campo__ayuda"></span></div>
+              <div class="campo"><label class="campo__label" for="email">Email</label><input class="campo__input" id="email" name="email" type="email" placeholder="tu@email.com"><span class="campo__ayuda"></span></div>
             </div>
             <div class="campo"><label class="campo__label" for="motivo">Motivo</label>
-              <select class="campo__select" id="motivo"><option>Consulta sobre un producto</option><option>Estado de mi pedido</option><option>Cambios y devoluciones</option><option>Otro</option></select></div>
-            <div class="campo"><label class="campo__label" for="mensaje">Mensaje</label><textarea class="campo__textarea" id="mensaje" placeholder="Contanos en qué te podemos ayudar"></textarea>
+              <select class="campo__select" id="motivo" name="motivo"><option>Consulta sobre un producto</option><option>Estado de mi pedido</option><option>Cambios y devoluciones</option><option>Otro</option></select></div>
+            <div class="campo"><label class="campo__label" for="mensaje">Mensaje</label><textarea class="campo__textarea" id="mensaje" name="mensaje" placeholder="Contanos en qué te podemos ayudar"></textarea>
               <span class="campo__ayuda">Respondemos de lunes a viernes de 9 a 18 h.</span></div>
             <button class="btn btn--primario" type="submit">Enviar mensaje</button>
+            <p class="calculadora-envio__mensaje" id="contacto-estado" role="status"></p>
           </form>
         </section>
 
@@ -152,5 +153,6 @@
     <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
     <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
   </a>
+  <script type="module" src="assets/js/contacto.js"></script>
 </body>
 </html>

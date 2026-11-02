@@ -12,7 +12,7 @@ export function formatearPrecio(numero) {
   return "$" + numero.toLocaleString("es-AR");
 }
 
-function crearTarjetaProducto(producto) {
+export function crearTarjetaProducto(producto) {
   const sinStock = producto.stock.estado === "sin-stock";
 
   const badgesHtml = producto.badges
@@ -21,18 +21,18 @@ function crearTarjetaProducto(producto) {
 
   const botonHtml = sinStock
     ? `<button class="btn btn--deshabilitado btn--chico btn--bloque" disabled>Sin stock</button>`
-    : `<button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>`;
+    : `<button class="btn btn--primario btn--chico btn--bloque boton-agregar" data-id="${producto.id}">Agregar al carrito</button>`;
 
   const articulo = document.createElement("article");
   articulo.className = "producto-card" + (sinStock ? " producto-card--sin-stock" : "");
 
   articulo.innerHTML = `
-    <a class="producto-card__imagen-link" href="producto.html">
+    <a class="producto-card__imagen-link" href="producto.html?id=${producto.id}">
       <img class="producto-card__imagen" src="${producto.imagen}" alt="${producto.nombre}" loading="lazy">
     </a>
     <div class="producto-card__cuerpo">
       <span class="producto-card__categoria">${producto.categoria}</span>
-      <h3 class="producto-card__nombre"><a href="producto.html">${producto.nombre}</a></h3>
+      <h3 class="producto-card__nombre"><a href="producto.html?id=${producto.id}">${producto.nombre}</a></h3>
       <div class="badges">${badgesHtml}</div>
       <div class="producto-card__pie">
         <span class="stock stock--${producto.stock.estado}">${producto.stock.texto}</span>

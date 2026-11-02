@@ -1,6 +1,6 @@
 /* =========================================================
    NUTRITE — Hoja de estilos principal (unificada)
-   Antes se cargaba en 19 archivos separados vía @import;
+   Antes se cargaba en 19 archivos CSS separados;
    se unificó en un solo archivo para evitar 19 requests HTTP
    extra en cascada al cargar la página.
    Metodología de nombres: BEM + prefijos (l-, u-, is-)
@@ -197,7 +197,7 @@ strong { color: var(--color-texto); }
 }
 
 /* Modificadores de layout */
-.l-seccion--sin-arriba { padding-top: 0 !important; }
+.l-seccion--sin-arriba { padding-top: 0; }
 .breadcrumb__lista { display: contents; }
 
 
@@ -1137,8 +1137,8 @@ strong { color: var(--color-texto); }
 .stepper__paso--activo { color: var(--color-primario-oscuro); font-weight: 600; }
 .stepper__paso--completo::before { content: "✓"; background: var(--color-primario); border-color: var(--color-primario); color: #fff; }
 .stepper__paso--activo::before { border-color: var(--color-primario); color: var(--color-primario); box-shadow: 0 0 0 4px var(--color-primario-claro); }
-.stepper__paso--completo::after,
-.stepper__paso--activo::after { background: var(--color-primario) !important; }
+.stepper__paso--completo:not(:first-child)::after,
+.stepper__paso--activo:not(:first-child)::after { background: var(--color-primario); }
 
 .checkout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--esp-5); align-items: start; }
 .checkout__panel {
@@ -1225,7 +1225,7 @@ strong { color: var(--color-texto); }
 /* ---- 5. Utilidades ---- */
 /* Utilidades (prefijo u-): clases de un solo propósito */
 .u-visualmente-oculto {
-  position: absolute !important;
+  position: absolute;
   width: 1px; height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -1247,3 +1247,6 @@ strong { color: var(--color-texto); }
 .calculadora-envio__mensaje.is-error { color: #c0392b; }
 .resumen__linea--descuento { color: var(--color-primario-oscuro); font-weight: 600; }
 .cuotas__fila { cursor: pointer; }
+
+/* El atributo hidden debe ganar sobre los display de los componentes */
+[hidden] { display: none; }

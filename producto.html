@@ -50,7 +50,7 @@
 
       <a href="carrito.html" class="carrito-icono" aria-label="Ver carrito (3 productos)">
         <img class="carrito-icono__imagen" src="assets/img/iconos/carrito.svg" alt="">
-        <span class="carrito-icono__contador">3</span>
+        <span class="carrito-icono__contador">0</span>
       </a>
     </div>
   </header>
@@ -58,140 +58,14 @@
   <main>
     <div class="l-contenedor">
       <nav class="breadcrumb" aria-label="Migas de pan">
-        <ol class="breadcrumb__lista"><li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Inicio</a></li><li class="breadcrumb__item"><a class="breadcrumb__link" href="catalogo.html">Harinas y panificados</a></li><li class="breadcrumb__item">Harina de almendras</li></ol>
+        <ol class="breadcrumb__lista"><li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Inicio</a></li><li class="breadcrumb__item"><a class="breadcrumb__link" href="catalogo.html" id="miga-categoria">Catálogo</a></li><li class="breadcrumb__item" id="miga-producto">Producto</li></ol>
       </nav>
 
-      <article class="producto">
-        <div class="producto__galeria">
-          <img class="producto__imagen-principal" src="assets/img/productos/harina-almendras.svg" alt="Harina de almendras 500 g">
-          <div class="producto__miniaturas">
-            <button class="producto__miniatura producto__miniatura--activa"><img src="assets/img/productos/harina-almendras.svg" alt="Vista 1"></button>
-            <button class="producto__miniatura"><img src="assets/img/productos/mix-frutos-secos.svg" alt="Vista 2"></button>
-            <button class="producto__miniatura"><img src="assets/img/productos/galletitas-avena.svg" alt="Vista 3"></button>
-          </div>
-        </div>
+      <article class="producto" id="detalle-producto"></article>
 
-        <div class="producto__info">
-          <div class="badges"><span class="badge badge--sin-tacc">Sin TACC</span><span class="badge badge--vegano">Vegano</span></div>
-          <h1 class="producto__nombre">Harina de almendras 500 g</h1>
-          <span class="stock stock--ultimas stock--grande">¡Últimas 3 unidades disponibles!</span>
-
-          <div class="producto__precio-bloque">
-            <span class="producto__precio">$6.800</span><span class="producto__precio-anterior">$7.500</span>
-            <p class="producto__cuotas">3 cuotas sin interés de $2.267 · hasta 12 cuotas</p>
-            <p class="producto__medios">10% OFF pagando con transferencia: <strong>$6.120</strong></p>
-          </div>
-
-          <div class="producto__compra">
-            <div class="cantidad">
-              <button class="cantidad__boton" aria-label="Restar">−</button>
-              <input class="cantidad__input" type="number" value="1" min="1" max="3" aria-label="Cantidad">
-              <button class="cantidad__boton" aria-label="Sumar">+</button>
-            </div>
-            <button class="btn btn--primario"><img class="btn__icono" src="assets/img/iconos/carrito-blanco.svg" alt=""> Agregar al carrito</button>
-          </div>
-
-          <div class="calculadora-envio">
-            <h2 class="calculadora-envio__titulo"><img class="calculadora-envio__icono" src="assets/img/iconos/envio.svg" alt=""> Calculá tu envío</h2>
-            <form class="calculadora-envio__form">
-              <label for="cp-producto" class="u-visualmente-oculto">Código postal</label>
-              <input class="calculadora-envio__input" id="cp-producto" type="text" inputmode="numeric" placeholder="Tu código postal" value="5000">
-              <button class="btn btn--primario btn--chico" type="submit">Calcular</button>
-            </form>
-            <div class="calculadora-envio__resultados">
-              <div class="opcion-envio"><span><span class="opcion-envio__nombre">Moto — Córdoba Capital</span><span class="opcion-envio__tiempo">Llega mañana</span></span><span class="opcion-envio__precio">$1.900</span></div>
-              <div class="opcion-envio"><span><span class="opcion-envio__nombre">Retiro en punto Nutrite</span><span class="opcion-envio__tiempo">Disponible en 24 h</span></span><span class="opcion-envio__precio opcion-envio__precio--gratis">Gratis</span></div>
-            </div>
-            <a class="calculadora-envio__link" href="#">No sé mi código postal</a>
-          </div>
-
-          <a class="btn btn--whatsapp btn--bloque" href="#"><img class="btn__icono" src="assets/img/iconos/chat-blanco.svg" alt=""> Consultar por WhatsApp</a>
-
-          <div class="acordeon">
-            <details class="acordeon__item" open>
-              <summary class="acordeon__titulo">Descripción</summary>
-              <div class="acordeon__contenido"><p>Harina de almendras blanqueadas, finamente molida. Ideal para budines, galletitas y masas sin gluten. Apta para dietas sin TACC, veganas y bajas en carbohidratos.</p></div>
-            </details>
-            <details class="acordeon__item">
-              <summary class="acordeon__titulo">Ingredientes</summary>
-              <div class="acordeon__contenido"><p>100% almendras peladas. Elaborado en planta libre de gluten.</p></div>
-            </details>
-            <details class="acordeon__item">
-              <summary class="acordeon__titulo">Información nutricional (porción 30 g)</summary>
-              <div class="acordeon__contenido">
-                <table class="tabla-nutricional">
-                  <tr><th>Valor energético</th><td>174 kcal</td></tr>
-                  <tr><th>Proteínas</th><td>6,3 g</td></tr>
-                  <tr><th>Grasas totales</th><td>15 g</td></tr>
-                  <tr><th>Carbohidratos</th><td>3 g</td></tr>
-                  <tr><th>Fibra</th><td>3,6 g</td></tr>
-                </table>
-              </div>
-            </details>
-          </div>
-        </div>
-      </article>
-
-      <section class="l-seccion">
+      <section class="l-seccion" id="seccion-relacionados">
         <div class="l-seccion__titulo"><h2>También te puede interesar</h2></div>
-        <div class="l-grilla">
-        <article class="producto-card">
-          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/galletitas-avena.svg" alt="Galletitas de avena y miel sin TACC 200 g" loading="lazy"></a>
-          <div class="producto-card__cuerpo">
-            <span class="producto-card__categoria">Snacks y galletitas</span>
-            <h3 class="producto-card__nombre"><a href="producto.html">Galletitas de avena y miel sin TACC 200 g</a></h3>
-            <div class="badges"><span class="badge badge--sin-tacc">Sin TACC</span></div>
-            <div class="producto-card__pie">
-              <span class="stock stock--disponible">En stock</span>
-              <span class="producto-card__precio">$3.200</span>
-              <span class="producto-card__cuotas">3 cuotas sin interés de $1.067</span>
-              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
-            </div>
-          </div>
-        </article>
-        <article class="producto-card">
-          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/pan-integral.svg" alt="Pan integral de semillas 400 g" loading="lazy"></a>
-          <div class="producto-card__cuerpo">
-            <span class="producto-card__categoria">Harinas y panificados</span>
-            <h3 class="producto-card__nombre"><a href="producto.html">Pan integral de semillas 400 g</a></h3>
-            <div class="badges"><span class="badge badge--integral">Integral</span></div>
-            <div class="producto-card__pie">
-              <span class="stock stock--ultimas">¡Últimas 2 unidades!</span>
-              <span class="producto-card__precio">$3.900</span>
-              <span class="producto-card__cuotas">3 cuotas sin interés de $1.300</span>
-              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
-            </div>
-          </div>
-        </article>
-        <article class="producto-card">
-          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/semillas-chia.svg" alt="Semillas de chía 500 g" loading="lazy"></a>
-          <div class="producto-card__cuerpo">
-            <span class="producto-card__categoria">Frutos secos y semillas</span>
-            <h3 class="producto-card__nombre"><a href="producto.html">Semillas de chía 500 g</a></h3>
-            <div class="badges"><span class="badge badge--sin-tacc">Sin TACC</span><span class="badge badge--vegano">Vegano</span></div>
-            <div class="producto-card__pie">
-              <span class="stock stock--disponible">En stock</span>
-              <span class="producto-card__precio">$3.100</span>
-              <span class="producto-card__cuotas">3 cuotas sin interés de $1.033</span>
-              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
-            </div>
-          </div>
-        </article>
-        <article class="producto-card">
-          <a class="producto-card__imagen-link" href="producto.html"><img class="producto-card__imagen" src="assets/img/productos/mix-frutos-secos.svg" alt="Mix de frutos secos premium 250 g" loading="lazy"></a>
-          <div class="producto-card__cuerpo">
-            <span class="producto-card__categoria">Frutos secos y semillas</span>
-            <h3 class="producto-card__nombre"><a href="producto.html">Mix de frutos secos premium 250 g</a></h3>
-            <div class="badges"><span class="badge badge--vegano">Vegano</span></div>
-            <div class="producto-card__pie">
-              <span class="stock stock--disponible">En stock</span>
-              <span class="producto-card__precio">$4.500</span>
-              <span class="producto-card__cuotas">3 cuotas sin interés de $1.500</span>
-              <button class="btn btn--primario btn--chico btn--bloque">Agregar al carrito</button>
-            </div>
-          </div>
-        </article>
-        </div>
+        <div class="l-grilla" id="grilla-relacionados"></div>
       </section>
     </div>
   </main>
@@ -246,5 +120,6 @@
     <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
     <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
   </a>
+  <script type="module" src="assets/js/producto.js"></script>
 </body>
 </html>
