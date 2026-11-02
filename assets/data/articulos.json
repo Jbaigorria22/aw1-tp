@@ -1,0 +1,113 @@
+[
+  {
+    "id": 1,
+    "titulo": "Galletitas de avena y miel en 20 minutos",
+    "categoria": "Recetas",
+    "fecha": "2026-10-12",
+    "lectura": "3 min",
+    "imagen": "assets/img/productos/galletitas-avena.svg",
+    "resumen": "Una receta simple para la merienda, sin horno complicado y sin gluten.",
+    "contenido": [
+      "Mezclá 2 tazas de avena sin TACC con 1/2 taza de harina de almendras y una pizca de sal.",
+      "Sumá 1/3 de taza de miel y 1/4 de taza de aceite de girasol. Integrá hasta formar una masa húmeda que se pueda moldear.",
+      "Armá bolitas, aplastalas sobre una placa con papel manteca y horneá 15 minutos a 180 °C.",
+      "Dejalas enfriar antes de guardarlas en un frasco hermético: duran hasta 5 días."
+    ],
+    "productos": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": 2,
+    "titulo": "Cómo reemplazar el azúcar en tus postres",
+    "categoria": "Tips",
+    "fecha": "2026-10-08",
+    "lectura": "3 min",
+    "imagen": "assets/img/productos/stevia-liquida.svg",
+    "resumen": "Equivalencias básicas para endulzar sin azúcar refinada.",
+    "contenido": [
+      "Los endulzantes naturales no endulzan igual que el azúcar, así que conviene probar de a poco.",
+      "La stevia líquida endulza mucho más: con unas gotas alcanza para una taza de té o un yogur.",
+      "En preparaciones al horno, la miel o los dátiles aportan humedad y sabor; reducí un poco el líquido de la receta.",
+      "Probá siempre antes de agregar más: es más fácil sumar dulzor que quitarlo."
+    ],
+    "productos": [
+      4,
+      6
+    ]
+  },
+  {
+    "id": 3,
+    "titulo": "Chía: cómo usarla todos los días",
+    "categoria": "Tips",
+    "fecha": "2026-09-30",
+    "lectura": "2 min",
+    "imagen": "assets/img/productos/semillas-chia.svg",
+    "resumen": "Ideas rápidas para sumar fibra y omega 3 a tu rutina.",
+    "contenido": [
+      "La chía absorbe hasta diez veces su peso en líquido, por eso conviene hidratarla antes de consumirla.",
+      "Mezclá 2 cucharadas con 1/2 taza de bebida vegetal y dejala reposar una noche: tenés un pudín listo para el desayuno.",
+      "También podés espolvorearla sobre ensaladas, yogur o licuados sin hidratar."
+    ],
+    "productos": [
+      8,
+      6
+    ]
+  },
+  {
+    "id": 4,
+    "titulo": "Pan casero sin TACC: tres claves",
+    "categoria": "Recetas",
+    "fecha": "2026-09-22",
+    "lectura": "4 min",
+    "imagen": "assets/img/productos/pan-integral.svg",
+    "resumen": "Para que el pan sin gluten quede esponjoso y no se desmorone.",
+    "contenido": [
+      "Usá una mezcla de harinas: una sola harina sin gluten suele dar panes densos.",
+      "Agregá semillas molidas, como chía o lino, para ayudar a que la masa retenga humedad.",
+      "Dejá enfriar el pan por completo antes de cortarlo: así termina de asentarse la miga."
+    ],
+    "productos": [
+      2,
+      7,
+      8
+    ]
+  },
+  {
+    "id": 5,
+    "titulo": "Snacks saludables para llevar",
+    "categoria": "Tips",
+    "fecha": "2026-09-15",
+    "lectura": "2 min",
+    "imagen": "assets/img/productos/mix-frutos-secos.svg",
+    "resumen": "Opciones prácticas para la oficina, la facultad o el viaje.",
+    "contenido": [
+      "Un puñado de frutos secos (unos 30 g) aporta grasas saludables y te mantiene con energía.",
+      "Preparás porciones en bolsitas y las tenés listas toda la semana.",
+      "Combinalos con una fruta fresca o con unas galletitas de avena para un snack más completo."
+    ],
+    "productos": [
+      3,
+      1
+    ]
+  },
+  {
+    "id": 6,
+    "titulo": "Nueva incorporación: bebida de almendras",
+    "categoria": "Novedades",
+    "fecha": "2026-10-20",
+    "lectura": "1 min",
+    "imagen": "assets/img/productos/bebida-almendras.svg",
+    "resumen": "Sumamos al catálogo una opción vegetal sin azúcar.",
+    "contenido": [
+      "Llegó a Nutrite la bebida de almendras sin azúcar de 1 litro, pensada para quienes buscan una alternativa vegetal a la leche.",
+      "Es ideal para licuados, cereales y recetas. Está disponible en la tienda y se puede pagar en cuotas.",
+      "Si tenés dudas sobre cómo usarla en tus preparaciones, escribinos por WhatsApp."
+    ],
+    "productos": [
+      6,
+      3
+    ]
+  }
+]

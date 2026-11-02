@@ -13,3 +13,15 @@ export async function obtenerProductos() {
 
   return respuesta.json();
 }
+
+const URL_ARTICULOS = "assets/data/articulos.json";
+
+export async function obtenerArticulos() {
+  const respuesta = await fetch(URL_ARTICULOS);
+
+  if (!respuesta.ok) {
+    throw new Error(`No se pudieron cargar los artículos (HTTP ${respuesta.status})`);
+  }
+
+  return respuesta.json();
+}
