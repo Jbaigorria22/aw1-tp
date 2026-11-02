@@ -50,7 +50,7 @@
 
       <a href="carrito.html" class="carrito-icono" aria-label="Ver carrito (3 productos)">
         <img class="carrito-icono__imagen" src="assets/img/iconos/carrito.svg" alt="">
-        <span class="carrito-icono__contador">3</span>
+        <span class="carrito-icono__contador" id="contador">3</span>
       </a>
     </div>
   </header>
@@ -60,49 +60,10 @@
       <nav class="breadcrumb" aria-label="Migas de pan">
         <ol class="breadcrumb__lista"><li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">Inicio</a></li><li class="breadcrumb__item">Carrito</li></ol>
       </nav>
-      <h1>Tu carrito <span class="carrito__cantidad">(3 productos)</span></h1>
+      <h1>Tu carrito <span class="carrito__cantidad" id="cantidad-productos"></span></h1>
 
       <div class="carrito u-mt-4">
-        <ul class="carrito__lista">
-          <li class="item-carrito">
-            <img class="item-carrito__imagen" src="assets/img/productos/harina-almendras.svg" alt="Harina de almendras 500 g">
-            <div class="item-carrito__info">
-              <h3 class="item-carrito__nombre">Harina de almendras 500 g</h3>
-              <span class="item-carrito__unitario">$6.800 c/u</span>
-              <span class="stock stock--ultimas">¡Últimas 3 unidades!</span>
-            </div>
-            <div class="item-carrito__acciones">
-              <div class="cantidad"><button class="cantidad__boton" aria-label="Restar">−</button><input class="cantidad__input" type="number" value="2" aria-label="Cantidad"><button class="cantidad__boton" aria-label="Sumar">+</button></div>
-              <span class="item-carrito__subtotal">$13.600</span>
-              <button class="item-carrito__eliminar">Eliminar</button>
-            </div>
-          </li>
-          <li class="item-carrito">
-            <img class="item-carrito__imagen" src="assets/img/productos/semillas-chia.svg" alt="Semillas de chía 500 g">
-            <div class="item-carrito__info">
-              <h3 class="item-carrito__nombre">Semillas de chía 500 g</h3>
-              <span class="item-carrito__unitario">$3.100 c/u</span>
-              <span class="stock stock--disponible">En stock</span>
-            </div>
-            <div class="item-carrito__acciones">
-              <div class="cantidad"><button class="cantidad__boton" aria-label="Restar">−</button><input class="cantidad__input" type="number" value="1" aria-label="Cantidad"><button class="cantidad__boton" aria-label="Sumar">+</button></div>
-              <span class="item-carrito__subtotal">$3.100</span>
-              <button class="item-carrito__eliminar">Eliminar</button>
-            </div>
-          </li>
-          <li class="item-carrito">
-            <img class="item-carrito__imagen" src="assets/img/productos/stevia-liquida.svg" alt="Stevia líquida 100 ml">
-            <div class="item-carrito__info">
-              <h3 class="item-carrito__nombre">Stevia líquida 100 ml</h3>
-              <span class="item-carrito__unitario">$2.900 c/u</span>
-              <span class="stock stock--disponible">En stock</span>
-            </div>
-            <div class="item-carrito__acciones">
-              <div class="cantidad"><button class="cantidad__boton" aria-label="Restar">−</button><input class="cantidad__input" type="number" value="1" aria-label="Cantidad"><button class="cantidad__boton" aria-label="Sumar">+</button></div>
-              <span class="item-carrito__subtotal">$2.900</span>
-              <button class="item-carrito__eliminar">Eliminar</button>
-            </div>
-          </li>
+        <ul class="carrito__lista" id="lista-carrito">
         </ul>
 
         <aside class="resumen">
@@ -110,25 +71,26 @@
 
           <div class="calculadora-envio">
             <h3 class="calculadora-envio__titulo"><img class="calculadora-envio__icono" src="assets/img/iconos/envio.svg" alt=""> Costo de envío</h3>
-            <form class="calculadora-envio__form">
+            <form class="calculadora-envio__form" id="form-envio">
               <label for="cp-carrito" class="u-visualmente-oculto">Código postal</label>
               <input class="calculadora-envio__input" id="cp-carrito" type="text" inputmode="numeric" value="5000">
               <button class="btn btn--primario btn--chico" type="submit">Calcular</button>
             </form>
+            <p class="calculadora-envio__mensaje" id="cp-mensaje"></p>
             <div class="calculadora-envio__resultados">
-              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio" checked><span><span class="opcion-envio__nombre">Moto</span><span class="opcion-envio__tiempo">Llega mañana</span></span></span><span class="opcion-envio__precio">$1.900</span></label>
-              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio"><span><span class="opcion-envio__nombre">Correo a domicilio</span><span class="opcion-envio__tiempo">3 a 5 días hábiles</span></span></span><span class="opcion-envio__precio">$3.400</span></label>
-              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio"><span><span class="opcion-envio__nombre">Retiro en punto Nutrite</span><span class="opcion-envio__tiempo">Disponible en 24 h</span></span></span><span class="opcion-envio__precio opcion-envio__precio--gratis">Gratis</span></label>
+              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio" value="moto" checked><span><span class="opcion-envio__nombre">Moto</span><span class="opcion-envio__tiempo">Llega mañana</span></span></span><span class="opcion-envio__precio">$1.900</span></label>
+              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio" value="correo"><span><span class="opcion-envio__nombre">Correo a domicilio</span><span class="opcion-envio__tiempo">3 a 5 días hábiles</span></span></span><span class="opcion-envio__precio">$3.400</span></label>
+              <label class="opcion-envio"><span class="opcion-envio__info"><input type="radio" name="envio" value="retiro"><span><span class="opcion-envio__nombre">Retiro en punto Nutrite</span><span class="opcion-envio__tiempo">Disponible en 24 h</span></span></span><span class="opcion-envio__precio opcion-envio__precio--gratis">Gratis</span></label>
             </div>
           </div>
 
-          <div class="resumen__linea"><span>Subtotal</span><span>$19.600</span></div>
-          <div class="resumen__linea"><span>Envío (Moto)</span><span>$1.900</span></div>
-          <div class="resumen__linea resumen__linea--total"><span>Total</span><span>$21.500</span></div>
-          <p class="producto__cuotas u-texto-centro">o 3 cuotas sin interés de $7.167</p>
-          <a class="btn btn--primario btn--bloque" href="checkout.html">Iniciar compra</a>
+          <div class="resumen__linea"><span>Subtotal</span><span id="resumen-subtotal">$0</span></div>
+          <div class="resumen__linea"><span id="resumen-envio-nombre">Envío</span><span id="resumen-envio">$0</span></div>
+          <div class="resumen__linea resumen__linea--total"><span>Total</span><span id="resumen-total">$0</span></div>
+          <p class="producto__cuotas u-texto-centro" id="resumen-cuotas"></p>
+          <a class="btn btn--primario btn--bloque" id="btn-iniciar-compra" href="checkout.html">Iniciar compra</a>
           <a class="btn btn--secundario btn--bloque" href="catalogo.html">Seguir comprando</a>
-          <p class="resumen__nota">Te faltan $20.400 para el envío gratis.</p>
+          <p class="resumen__nota" id="resumen-nota"></p>
         </aside>
       </div>
     </div>
@@ -184,5 +146,6 @@
     <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
     <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
   </a>
+  <script type="module" src="assets/js/carrito.js"></script>
 </body>
 </html>

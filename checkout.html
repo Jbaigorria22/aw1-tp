@@ -50,7 +50,7 @@
 
       <a href="carrito.html" class="carrito-icono" aria-label="Ver carrito (3 productos)">
         <img class="carrito-icono__imagen" src="assets/img/iconos/carrito.svg" alt="">
-        <span class="carrito-icono__contador">3</span>
+        <span class="carrito-icono__contador" id="contador">3</span>
       </a>
     </div>
   </header>
@@ -65,40 +65,29 @@
       </ol>
 
       <div class="checkout">
-        <section class="checkout__panel">
+        <section class="checkout__panel" id="panel-pago">
           <h1 class="checkout__titulo">Método de pago</h1>
           <div class="medios-pago" role="radiogroup">
-            <label class="medio-pago"><input type="radio" name="pago" checked><img class="medio-pago__icono" src="assets/img/iconos/tarjeta.svg" alt=""><span><span class="medio-pago__nombre">Tarjeta de crédito</span><span class="medio-pago__detalle">Hasta 12 cuotas</span></span></label>
-            <label class="medio-pago"><input type="radio" name="pago"><img class="medio-pago__icono" src="assets/img/iconos/tarjeta.svg" alt=""><span><span class="medio-pago__nombre">Tarjeta de débito</span><span class="medio-pago__detalle">Pago en 1 cuota</span></span></label>
-            <label class="medio-pago"><input type="radio" name="pago"><img class="medio-pago__icono" src="assets/img/iconos/transferencia.svg" alt=""><span><span class="medio-pago__nombre">Transferencia</span><span class="medio-pago__detalle">10% de descuento</span></span></label>
-            <label class="medio-pago"><input type="radio" name="pago"><img class="medio-pago__icono" src="assets/img/iconos/billetera.svg" alt=""><span><span class="medio-pago__nombre">Billetera virtual</span><span class="medio-pago__detalle">Mercado Pago, MODO</span></span></label>
+            <label class="medio-pago"><input type="radio" name="pago" value="credito" checked><img class="medio-pago__icono" src="assets/img/iconos/tarjeta.svg" alt=""><span><span class="medio-pago__nombre">Tarjeta de crédito</span><span class="medio-pago__detalle">Hasta 12 cuotas</span></span></label>
+            <label class="medio-pago"><input type="radio" name="pago" value="debito"><img class="medio-pago__icono" src="assets/img/iconos/tarjeta.svg" alt=""><span><span class="medio-pago__nombre">Tarjeta de débito</span><span class="medio-pago__detalle">Pago en 1 cuota</span></span></label>
+            <label class="medio-pago"><input type="radio" name="pago" value="transferencia"><img class="medio-pago__icono" src="assets/img/iconos/transferencia.svg" alt=""><span><span class="medio-pago__nombre">Transferencia</span><span class="medio-pago__detalle">10% de descuento</span></span></label>
+            <label class="medio-pago"><input type="radio" name="pago" value="billetera"><img class="medio-pago__icono" src="assets/img/iconos/billetera.svg" alt=""><span><span class="medio-pago__nombre">Billetera virtual</span><span class="medio-pago__detalle">Mercado Pago, MODO</span></span></label>
           </div>
 
-          <table class="cuotas">
+          <table class="cuotas" id="tabla-cuotas">
             <caption class="cuotas__titulo">Cuotas disponibles con tarjeta de crédito</caption>
             <thead><tr><th>Plan</th><th>Valor cuota</th><th>Total</th><th>Interés</th></tr></thead>
-            <tbody>
-              <tr class=""><td>1 cuota</td><td>$21.500</td><td>$21.500</td><td><span class=cuotas__sin-interes>Sin interés</span></td></tr>
-              <tr class="cuotas__fila--destacada"><td>3 cuotas</td><td>$7.167</td><td>$21.500</td><td><span class=cuotas__sin-interes>Sin interés</span></td></tr>
-              <tr class=""><td>6 cuotas</td><td>$4.013</td><td>$24.080</td><td>12% interés</td></tr>
-              <tr class=""><td>12 cuotas</td><td>$2.293</td><td>$27.520</td><td>28% interés</td></tr>
+            <tbody id="cuerpo-cuotas">
             </tbody>
           </table>
 
           <div class="checkout__navegacion">
             <a class="btn btn--secundario" href="carrito.html">← Volver</a>
-            <button class="btn btn--primario">Continuar →</button>
+            <button class="btn btn--primario" id="btn-continuar" type="button">Confirmar compra →</button>
           </div>
         </section>
 
-        <aside class="resumen">
-          <h2 class="resumen__titulo">Tu pedido</h2>
-          <div class="resumen__linea"><span>Harina de almendras ×2</span><span>$13.600</span></div>
-          <div class="resumen__linea"><span>Semillas de chía ×1</span><span>$3.100</span></div>
-          <div class="resumen__linea"><span>Stevia líquida ×1</span><span>$2.900</span></div>
-          <div class="resumen__linea"><span>Envío en moto (mañana)</span><span>$1.900</span></div>
-          <div class="resumen__linea resumen__linea--total"><span>Total</span><span>$21.500</span></div>
-          <p class="resumen__nota">Entrega en: Av. Colón 1234, Córdoba (CP 5000)</p>
+        <aside class="resumen" id="resumen-pedido">
         </aside>
       </div>
     </div>
@@ -154,5 +143,6 @@
     <img class="whatsapp-flotante__icono" src="assets/img/iconos/chat-blanco.svg" alt="">
     <span class="whatsapp-flotante__texto">¿Consultas? Escribinos</span>
   </a>
+  <script type="module" src="assets/js/checkout.js"></script>
 </body>
 </html>

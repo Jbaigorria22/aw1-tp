@@ -1241,3 +1241,9 @@ strong { color: var(--color-texto); }
   .u-solo-mobile { display: none; }
   .u-solo-desktop { display: initial; }
 }
+
+.carrito__vacio { list-style: none; padding: 2rem; text-align: center; }
+.calculadora-envio__mensaje { font-size: .875rem; margin: .5rem 0; }
+.calculadora-envio__mensaje.is-error { color: #c0392b; }
+.resumen__linea--descuento { color: var(--color-primario-oscuro); font-weight: 600; }
+.cuotas__fila { cursor: pointer; }
