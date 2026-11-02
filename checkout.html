@@ -35,7 +35,7 @@
           <li class="nav__item"><a class="nav__link" href="index.html">Inicio</a></li>
           <li class="nav__item"><a class="nav__link" href="catalogo.html">Tienda</a></li>
           <li class="nav__item"><a class="nav__link" href="carrito.html">Envíos</a></li>
-          <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
+          <li class="nav__item"><a class="nav__link" href="blog.html">Blog</a></li>
           <li class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
@@ -58,34 +58,77 @@
   <main>
     <div class="l-contenedor">
       <ol class="stepper" aria-label="Pasos de la compra">
-        <li class="stepper__paso stepper__paso--completo">Datos</li>
-        <li class="stepper__paso stepper__paso--completo">Entrega</li>
-        <li class="stepper__paso stepper__paso--activo" aria-current="step">Pago</li>
+        <li class="stepper__paso stepper__paso--activo" aria-current="step">Datos</li>
+        <li class="stepper__paso">Entrega</li>
+        <li class="stepper__paso">Pago</li>
         <li class="stepper__paso">Confirmación</li>
       </ol>
 
       <div class="checkout">
-        <section class="checkout__panel" id="panel-pago">
-          <h1 class="checkout__titulo">Método de pago</h1>
-          <div class="medios-pago" role="radiogroup">
-            <label class="medio-pago"><input type="radio" name="pago" value="credito" checked><img class="medio-pago__icono" src="assets/img/iconos/tarjeta.svg" alt=""><span><span class="medio-pago__nombre">Tarjeta de crédito</span><span class="medio-pago__detalle">Hasta 12 cuotas</span></span></label>
-            <label class="medio-pago"><input type="radio" name="pago" value="debito"><img class="medio-pago__icono" src="assets/img/iconos/tarjeta.svg" alt=""><span><span class="medio-pago__nombre">Tarjeta de débito</span><span class="medio-pago__detalle">Pago en 1 cuota</span></span></label>
-            <label class="medio-pago"><input type="radio" name="pago" value="transferencia"><img class="medio-pago__icono" src="assets/img/iconos/transferencia.svg" alt=""><span><span class="medio-pago__nombre">Transferencia</span><span class="medio-pago__detalle">10% de descuento</span></span></label>
-            <label class="medio-pago"><input type="radio" name="pago" value="billetera"><img class="medio-pago__icono" src="assets/img/iconos/billetera.svg" alt=""><span><span class="medio-pago__nombre">Billetera virtual</span><span class="medio-pago__detalle">Mercado Pago, MODO</span></span></label>
-          </div>
+        <div id="paneles">
+          <section class="checkout__panel" id="panel-datos">
+            <h1 class="checkout__titulo">Tus datos</h1>
+            <form class="form" id="form-datos" novalidate>
+              <div class="form__fila form__fila--2col">
+                <div class="campo"><label class="campo__label" for="dato-nombre">Nombre y apellido</label><input class="campo__input" id="dato-nombre" name="nombre" type="text" autocomplete="name" placeholder="Julieta Fernández"><span class="campo__ayuda"></span></div>
+                <div class="campo"><label class="campo__label" for="dato-email">Email</label><input class="campo__input" id="dato-email" name="email" type="email" autocomplete="email" placeholder="tu@email.com"><span class="campo__ayuda"></span></div>
+              </div>
+              <div class="form__fila form__fila--2col">
+                <div class="campo"><label class="campo__label" for="dato-telefono">Teléfono</label><input class="campo__input" id="dato-telefono" name="telefono" type="tel" inputmode="numeric" autocomplete="tel" placeholder="3511234567"><span class="campo__ayuda">Solo números, con código de área.</span></div>
+                <div class="campo"><label class="campo__label" for="dato-dni">DNI</label><input class="campo__input" id="dato-dni" name="dni" type="text" inputmode="numeric" placeholder="12345678"><span class="campo__ayuda"></span></div>
+              </div>
+              <div class="checkout__navegacion">
+                <a class="btn btn--secundario" href="carrito.html">← Volver al carrito</a>
+                <button class="btn btn--primario" type="submit">Continuar →</button>
+              </div>
+            </form>
+          </section>
 
-          <table class="cuotas" id="tabla-cuotas">
-            <caption class="cuotas__titulo">Cuotas disponibles con tarjeta de crédito</caption>
-            <thead><tr><th>Plan</th><th>Valor cuota</th><th>Total</th><th>Interés</th></tr></thead>
-            <tbody id="cuerpo-cuotas">
-            </tbody>
-          </table>
+          <section class="checkout__panel" id="panel-entrega" hidden>
+            <h1 class="checkout__titulo">Entrega</h1>
+            <form class="form" id="form-entrega" novalidate>
+              <div class="medios-pago" role="radiogroup" aria-label="Tipo de envío" id="opciones-entrega"></div>
+              <div id="campos-direccion" class="form">
+                <div class="form__fila form__fila--2col">
+                  <div class="campo"><label class="campo__label" for="dir-calle">Calle y número</label><input class="campo__input" id="dir-calle" name="calle" type="text" autocomplete="street-address" placeholder="Av. Colón 1234"><span class="campo__ayuda"></span></div>
+                  <div class="campo"><label class="campo__label" for="dir-ciudad">Ciudad</label><input class="campo__input" id="dir-ciudad" name="ciudad" type="text" placeholder="Córdoba"><span class="campo__ayuda"></span></div>
+                </div>
+                <div class="form__fila form__fila--2col">
+                  <div class="campo"><label class="campo__label" for="dir-cp">Código postal</label><input class="campo__input" id="dir-cp" name="cp" type="text" inputmode="numeric" placeholder="5000"><span class="campo__ayuda"></span></div>
+                  <div class="campo"><label class="campo__label" for="dir-notas">Aclaraciones (opcional)</label><input class="campo__input" id="dir-notas" name="notas" type="text" placeholder="Piso, timbre, horario"></div>
+                </div>
+              </div>
+              <div class="checkout__navegacion">
+                <button class="btn btn--secundario" type="button" data-ir-paso="0">← Volver</button>
+                <button class="btn btn--primario" type="submit">Continuar →</button>
+              </div>
+            </form>
+          </section>
 
-          <div class="checkout__navegacion">
-            <a class="btn btn--secundario" href="carrito.html">← Volver</a>
-            <button class="btn btn--primario" id="btn-continuar" type="button">Confirmar compra →</button>
-          </div>
-        </section>
+          <section class="checkout__panel" id="panel-pago" hidden>
+            <h1 class="checkout__titulo">Método de pago</h1>
+            <div class="medios-pago" role="radiogroup">
+              <label class="medio-pago"><input type="radio" name="pago" value="credito" checked><img class="medio-pago__icono" src="assets/img/iconos/tarjeta.svg" alt=""><span><span class="medio-pago__nombre">Tarjeta de crédito</span><span class="medio-pago__detalle">Hasta 12 cuotas</span></span></label>
+              <label class="medio-pago"><input type="radio" name="pago" value="debito"><img class="medio-pago__icono" src="assets/img/iconos/tarjeta.svg" alt=""><span><span class="medio-pago__nombre">Tarjeta de débito</span><span class="medio-pago__detalle">Pago en 1 cuota</span></span></label>
+              <label class="medio-pago"><input type="radio" name="pago" value="transferencia"><img class="medio-pago__icono" src="assets/img/iconos/transferencia.svg" alt=""><span><span class="medio-pago__nombre">Transferencia</span><span class="medio-pago__detalle">10% de descuento</span></span></label>
+              <label class="medio-pago"><input type="radio" name="pago" value="billetera"><img class="medio-pago__icono" src="assets/img/iconos/billetera.svg" alt=""><span><span class="medio-pago__nombre">Billetera virtual</span><span class="medio-pago__detalle">Mercado Pago, MODO</span></span></label>
+            </div>
+
+            <table class="cuotas" id="tabla-cuotas">
+              <caption class="cuotas__titulo">Cuotas disponibles con tarjeta de crédito</caption>
+              <thead><tr><th>Plan</th><th>Valor cuota</th><th>Total</th><th>Interés</th></tr></thead>
+              <tbody id="cuerpo-cuotas">
+              </tbody>
+            </table>
+
+            <div class="checkout__navegacion">
+              <button class="btn btn--secundario" type="button" data-ir-paso="1">← Volver</button>
+              <button class="btn btn--primario" id="btn-continuar" type="button">Confirmar compra →</button>
+            </div>
+          </section>
+
+          <section class="checkout__panel" id="panel-confirmacion" hidden></section>
+        </div>
 
         <aside class="resumen" id="resumen-pedido">
         </aside>
