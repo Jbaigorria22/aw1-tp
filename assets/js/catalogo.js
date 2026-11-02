@@ -6,6 +6,7 @@
 import { obtenerProductos } from "./datos.js";
 import { renderizarProductos, mostrarError } from "./render.js";
 import { filtrarProductos, ordenarProductos } from "./filtros.js";
+import { actualizarContadorHeader, escucharBotonesAgregar } from "./agregar.js";
 
 let productos = [];
 
@@ -17,7 +18,8 @@ const selectOrden = document.getElementById("orden-select");
 const contadorResultados = document.getElementById("contador-resultados");
 const contadorTotal = document.getElementById("contador-total");
 
-let busquedaActual = "";
+// El buscador del header (otras páginas) llega acá como catalogo.html?q=texto
+let busquedaActual = new URLSearchParams(window.location.search).get("q") || "";
 
 function leerFiltrosSeleccionados() {
   const atributos = [...formFiltros.querySelectorAll('input[name="attr"]:checked')].map(
@@ -67,7 +69,10 @@ function inicializarEventos() {
 async function iniciar() {
   try {
     productos = await obtenerProductos();
+    inputBuscar.value = busquedaActual;
     inicializarEventos();
+    escucharBotonesAgregar(grilla);
+    actualizarContadorHeader();
     actualizarVista();
   } catch (error) {
     mostrarError(grilla);

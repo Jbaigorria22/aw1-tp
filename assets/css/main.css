@@ -1247,3 +1247,6 @@ strong { color: var(--color-texto); }
 .calculadora-envio__mensaje.is-error { color: #c0392b; }
 .resumen__linea--descuento { color: var(--color-primario-oscuro); font-weight: 600; }
 .cuotas__fila { cursor: pointer; }
+
+/* El atributo hidden debe ganar sobre los display de los componentes */
+[hidden] { display: none !important; }
