@@ -1,4 +1,5 @@
 import { obtenerProductos } from './datos.js'
+import { URL_PRODUCTOS } from './config.js'
 import {
     envios,
     envioGratisDesde,
@@ -15,7 +16,7 @@ import {
     renderizadoCarrito
 } from './funciones-carrito.js'
 
-const productos = await obtenerProductos()
+let productos = []
 let carrito = leerCarrito()
 
 const contenedorCarrito = document.getElementById('lista-carrito')
@@ -139,33 +140,41 @@ function escucharBotones() {
     })
 }
 
-opcionesEnvio.forEach((opcion) => {
-    if (opcion.value == leerEnvio()) {
-        opcion.checked = true
-    }
-    opcion.addEventListener('change', (evento) => {
-        guardarEnvio(opcion.value)
-        mostrarResumen()
+function inicializarEventos() {
+    opcionesEnvio.forEach((opcion) => {
+        if (opcion.value == leerEnvio()) {
+            opcion.checked = true
+        }
+        opcion.addEventListener('change', (evento) => {
+            guardarEnvio(opcion.value)
+            mostrarResumen()
+        })
     })
-})
 
-formularioEnvio.addEventListener('submit', (evento) => {
-    evento.preventDefault()
-    const codigoPostal = inputCodigoPostal.value
-    if (codigoPostal.length == 4 && !isNaN(codigoPostal)) {
-        mensajeCodigoPostal.textContent = 'Envíos disponibles para el CP ' + codigoPostal
-        mensajeCodigoPostal.classList.remove('is-error')
-    } else {
-        mensajeCodigoPostal.textContent = 'Ingresá un código postal de 4 números'
-        mensajeCodigoPostal.classList.add('is-error')
-    }
-})
-
-botonIniciarCompra.addEventListener('click', (evento) => {
-    if (carrito.length == 0) {
+    formularioEnvio.addEventListener('submit', (evento) => {
         evento.preventDefault()
-        alert('Tu carrito está vacío')
-    }
-})
+        const codigoPostal = inputCodigoPostal.value
+        if (codigoPostal.length == 4 && !isNaN(codigoPostal)) {
+            mensajeCodigoPostal.textContent = 'Envíos disponibles para el CP ' + codigoPostal
+            mensajeCodigoPostal.classList.remove('is-error')
+        } else {
+            mensajeCodigoPostal.textContent = 'Ingresá un código postal de 4 números'
+            mensajeCodigoPostal.classList.add('is-error')
+        }
+    })
 
-actualizarCarrito()
+    botonIniciarCompra.addEventListener('click', (evento) => {
+        if (carrito.length == 0) {
+            evento.preventDefault()
+            alert('Tu carrito está vacío')
+        }
+    })
+}
+
+async function iniciar() {
+    productos = await obtenerProductos(URL_PRODUCTOS)
+    inicializarEventos()
+    actualizarCarrito()
+}
+
+iniciar()

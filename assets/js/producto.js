@@ -4,6 +4,7 @@
 // carrito, calculadora de envío y WhatsApp.
 
 import { obtenerProductos } from "./datos.js";
+import { URL_PRODUCTOS } from "./config.js";
 import { crearTarjetaProducto, formatearPrecio } from "./render.js";
 import { agregarAlCarrito, maximoStock } from "./funciones-carrito.js";
 import { actualizarContadorHeader, escucharBotonesAgregar } from "./agregar.js";
@@ -207,7 +208,7 @@ async function iniciar() {
   actualizarContadorHeader();
 
   try {
-    const productos = await obtenerProductos();
+    const productos = await obtenerProductos(URL_PRODUCTOS);
     const producto = productos.find((p) => p.id === leerIdDeLaUrl());
 
     if (!producto) {
@@ -237,4 +238,4 @@ async function iniciar() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", iniciar);
+iniciar();

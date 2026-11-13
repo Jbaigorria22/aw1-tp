@@ -2,18 +2,19 @@
 // Dibuja los productos destacados reutilizando la tarjeta de render.js.
 
 import { obtenerProductos } from "./datos.js";
+import { URL_PRODUCTOS } from "./config.js";
 import { crearTarjetaProducto } from "./render.js";
 import { actualizarContadorHeader, escucharBotonesAgregar } from "./agregar.js";
 
-const grilla = document.getElementById("grilla-destacados");
 const CANTIDAD_DESTACADOS = 4;
+const grilla = document.getElementById("grilla-destacados");
 
 async function iniciar() {
   actualizarContadorHeader();
   escucharBotonesAgregar(grilla);
 
   try {
-    const productos = await obtenerProductos();
+    const productos = await obtenerProductos(URL_PRODUCTOS);
     productos
       .filter((p) => p.stock.estado !== "sin-stock")
       .slice(0, CANTIDAD_DESTACADOS)
@@ -24,4 +25,4 @@ async function iniciar() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", iniciar);
+iniciar();
