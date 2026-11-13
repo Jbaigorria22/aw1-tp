@@ -3,6 +3,7 @@
 // Eventos: chips de categoría y buscador por título.
 
 import { obtenerArticulos } from "./datos.js";
+import { URL_ARTICULOS } from "./config.js";
 import { renderizarArticulos, mostrarError } from "./render-blog.js";
 import { actualizarContadorHeader } from "./agregar.js";
 
@@ -64,7 +65,7 @@ async function iniciar() {
   actualizarContadorHeader();
 
   try {
-    articulos = await obtenerArticulos();
+    articulos = await obtenerArticulos(URL_ARTICULOS);
     crearChips();
     inicializarEventos();
     actualizarVista();
@@ -74,4 +75,4 @@ async function iniciar() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", iniciar);
+iniciar();

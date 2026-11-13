@@ -3,6 +3,7 @@
 // muestra los productos del catálogo relacionados con "Agregar al carrito".
 
 import { obtenerArticulos, obtenerProductos } from "./datos.js";
+import { URL_ARTICULOS, URL_PRODUCTOS } from "./config.js";
 import { renderizarDetalleArticulo } from "./render-blog.js";
 import { crearTarjetaProducto } from "./render.js";
 import { actualizarContadorHeader, escucharBotonesAgregar } from "./agregar.js";
@@ -21,7 +22,7 @@ async function iniciar() {
   escucharBotonesAgregar(grillaProductos);
 
   try {
-    const [articulos, productos] = await Promise.all([obtenerArticulos(), obtenerProductos()]);
+    const [articulos, productos] = await Promise.all([obtenerArticulos(URL_ARTICULOS), obtenerProductos(URL_PRODUCTOS)]);
     const articulo = articulos.find((a) => a.id === leerIdDeLaUrl());
 
     if (!articulo) {
@@ -48,4 +49,4 @@ async function iniciar() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", iniciar);
+iniciar();

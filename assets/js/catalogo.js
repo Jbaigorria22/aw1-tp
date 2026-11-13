@@ -4,6 +4,7 @@
 // buscador, checkboxes de filtro, select de orden y botón limpiar.
 
 import { obtenerProductos } from "./datos.js";
+import { URL_PRODUCTOS } from "./config.js";
 import { renderizarProductos, mostrarError } from "./render.js";
 import { filtrarProductos, ordenarProductos } from "./filtros.js";
 import { actualizarContadorHeader, escucharBotonesAgregar } from "./agregar.js";
@@ -68,7 +69,7 @@ function inicializarEventos() {
 
 async function iniciar() {
   try {
-    productos = await obtenerProductos();
+    productos = await obtenerProductos(URL_PRODUCTOS);
     inputBuscar.value = busquedaActual;
     inicializarEventos();
     escucharBotonesAgregar(grilla);
@@ -80,4 +81,4 @@ async function iniciar() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", iniciar);
+iniciar();

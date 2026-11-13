@@ -1,4 +1,5 @@
 import { obtenerProductos } from './datos.js'
+import { URL_PRODUCTOS } from './config.js'
 import {
     envios,
     planesCuotas,
@@ -14,15 +15,14 @@ import {
     renderizadoCuotas
 } from './funciones-carrito.js'
 
-const productos = await obtenerProductos()
 const carrito = leerCarrito()
+let productos = []
+let subtotal = 0
 let medioPago = 'credito'
 let cuotasElegidas = 3
 let pasoActual = 0
 let datosCliente = {}
 let datosEntrega = {}
-
-const subtotal = calcularSubtotal(carrito, productos)
 
 const paneles = [
     document.getElementById('panel-datos'),
@@ -42,8 +42,6 @@ const formEntrega = document.getElementById('form-entrega')
 const opcionesEntrega = document.getElementById('opciones-entrega')
 const camposDireccion = document.getElementById('campos-direccion')
 const botonesVolver = document.querySelectorAll('[data-ir-paso]')
-
-contadorProductos.textContent = contarProductos(carrito)
 
 function calcularEnvioActual() {
     return calcularEnvio(subtotal, leerEnvio())
@@ -275,61 +273,63 @@ function mostrarConfirmacion() {
 }
 
 // Eventos
-formDatos.addEventListener('submit', (evento) => {
-    evento.preventDefault()
-    if (!validarDatos()) {
-        return
-    }
-    const f = formDatos.elements
-    datosCliente = {
-        nombre: f.nombre.value.trim(),
-        email: f.email.value.trim(),
-        telefono: f.telefono.value.trim(),
-        dni: f.dni.value.trim()
-    }
-    irAPaso(1)
-})
-
-opcionesEntrega.addEventListener('change', (evento) => {
-    guardarEnvio(evento.target.value)
-    actualizarCamposDireccion()
-    mostrarResumen()
-})
-
-formEntrega.addEventListener('submit', (evento) => {
-    evento.preventDefault()
-    if (!validarEntrega()) {
-        return
-    }
-    const f = formEntrega.elements
-    datosEntrega = {
-        calle: f.calle.value.trim(),
-        ciudad: f.ciudad.value.trim(),
-        cp: f.cp.value.trim(),
-        notas: f.notas.value.trim()
-    }
-    irAPaso(2)
-})
-
-botonesVolver.forEach((boton) => {
-    boton.addEventListener('click', (evento) => {
-        irAPaso(parseInt(boton.dataset.irPaso))
+function inicializarEventos() {
+    formDatos.addEventListener('submit', (evento) => {
+        evento.preventDefault()
+        if (!validarDatos()) {
+            return
+        }
+        const f = formDatos.elements
+        datosCliente = {
+            nombre: f.nombre.value.trim(),
+            email: f.email.value.trim(),
+            telefono: f.telefono.value.trim(),
+            dni: f.dni.value.trim()
+        }
+        irAPaso(1)
     })
-})
 
-mediosPago.forEach((medio) => {
-    medio.addEventListener('change', (evento) => {
-        medioPago = medio.value
-        mostrarCuotas()
+    opcionesEntrega.addEventListener('change', (evento) => {
+        guardarEnvio(evento.target.value)
+        actualizarCamposDireccion()
         mostrarResumen()
     })
-})
 
-botonConfirmar.addEventListener('click', (evento) => {
-    mostrarConfirmacion()
-})
+    formEntrega.addEventListener('submit', (evento) => {
+        evento.preventDefault()
+        if (!validarEntrega()) {
+            return
+        }
+        const f = formEntrega.elements
+        datosEntrega = {
+            calle: f.calle.value.trim(),
+            ciudad: f.ciudad.value.trim(),
+            cp: f.cp.value.trim(),
+            notas: f.notas.value.trim()
+        }
+        irAPaso(2)
+    })
 
-if (carrito.length == 0) {
+    botonesVolver.forEach((boton) => {
+        boton.addEventListener('click', (evento) => {
+            irAPaso(parseInt(boton.dataset.irPaso))
+        })
+    })
+
+    mediosPago.forEach((medio) => {
+        medio.addEventListener('change', (evento) => {
+            medioPago = medio.value
+            mostrarCuotas()
+            mostrarResumen()
+        })
+    })
+
+    botonConfirmar.addEventListener('click', (evento) => {
+        mostrarConfirmacion()
+    })
+}
+
+function mostrarCarritoVacio() {
     paneles.forEach((panel) => {
         panel.hidden = true
     })
@@ -339,6 +339,19 @@ if (carrito.length == 0) {
     <a class="btn btn--primario" href="catalogo.html">Ver productos</a>
     `
     resumenPedido.style.display = 'none'
-} else {
-    mostrarResumen()
 }
+
+async function iniciar() {
+    productos = await obtenerProductos(URL_PRODUCTOS)
+    subtotal = calcularSubtotal(carrito, productos)
+    contadorProductos.textContent = contarProductos(carrito)
+    inicializarEventos()
+
+    if (carrito.length == 0) {
+        mostrarCarritoVacio()
+    } else {
+        mostrarResumen()
+    }
+}
+
+iniciar()

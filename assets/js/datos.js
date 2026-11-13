@@ -1,27 +1,20 @@
-// Módulo de datos: se encarga únicamente de traer los productos.
-// El resto del código (render, filtros) no sabe ni le importa de
-// dónde salen los datos; solo le pide a este módulo la lista.
+// Módulo de datos: se encarga únicamente de traer datos desde una URL.
+// No conoce las rutas: cada módulo le pasa la que necesita (ver config.js).
 
-const URL_PRODUCTOS = "assets/data/productos.json";
-
-export async function obtenerProductos() {
-  const respuesta = await fetch(URL_PRODUCTOS);
+async function obtenerDatos(url, nombre) {
+  const respuesta = await fetch(url);
 
   if (!respuesta.ok) {
-    throw new Error(`No se pudieron cargar los productos (HTTP ${respuesta.status})`);
+    throw new Error(`No se pudieron cargar los ${nombre} (HTTP ${respuesta.status})`);
   }
 
   return respuesta.json();
 }
 
-const URL_ARTICULOS = "assets/data/articulos.json";
+export function obtenerProductos(url) {
+  return obtenerDatos(url, "productos");
+}
 
-export async function obtenerArticulos() {
-  const respuesta = await fetch(URL_ARTICULOS);
-
-  if (!respuesta.ok) {
-    throw new Error(`No se pudieron cargar los artículos (HTTP ${respuesta.status})`);
-  }
-
-  return respuesta.json();
+export function obtenerArticulos(url) {
+  return obtenerDatos(url, "artículos");
 }
